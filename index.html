@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drive Wheel · How to read it</title>
+<meta name="description" content="One circle, sixty minutes. Angle is the clock, distance is the field. How to read a Drive Wheel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#080D0B; --turf:#0F1815; --turf-2:#16221E; --line:#2E4038; --line-2:#4A6156;
+  --chalk:#F4F2EC; --chalk-dim:#C3CEC8; --chalk-faint:#9CAAA3; --flag:#F5C518; --paper:#FBFAF6;
+  --display:'IBM Plex Sans',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--chalk);font-family:var(--display);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--flag);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.mast{position:sticky;top:0;z-index:60;background:rgba(8,13,11,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.mast-in{max-width:1080px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:16px}
+.logo-txt{font-weight:600;font-size:1.35rem;letter-spacing:.06em;text-transform:uppercase;line-height:1}
+.cta{margin-left:auto;font-size:.86rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:10px 16px;border:1px solid var(--line-2);border-radius:2px;text-decoration:none;white-space:nowrap}
+.cta:hover{border-color:var(--chalk-dim);background:var(--turf-2)}
+h1{font-size:clamp(2.6rem,7vw,4.6rem);line-height:.98;font-weight:700;letter-spacing:-.02em;margin:56px 0 20px}
+h1 em{font-style:normal;color:var(--flag)}
+.lede{font-size:clamp(1.1rem,2.2vw,1.35rem);color:var(--chalk-dim);max-width:44ch;margin:0 0 44px}
+h2{font-size:1.6rem;font-weight:600;letter-spacing:-.01em;margin:0 0 12px}
+.eyebrow{font-family:var(--mono);font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--chalk-faint);margin:0 0 10px}
+.figure{background:var(--paper);border-radius:4px;padding:10px;margin:0 0 12px}
+.figure svg{width:100%;height:auto;display:block}
+.caption{font-family:var(--mono);font-size:.8rem;color:var(--chalk-faint);margin:0 0 64px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 0 64px}
+.card{background:var(--ink);padding:28px 26px}
+.card h2{min-height:2.6rem}
+.card p{margin:0;color:var(--chalk-dim);font-size:.98rem}
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px 34px;margin:0 0 20px;padding:0;list-style:none}
+.keys li{display:flex;align-items:flex-start;gap:13px;font-size:.98rem;color:var(--chalk-dim)}
+.keys svg{flex:none;margin-top:5px}
+.keys b{color:var(--chalk);font-weight:600}
+section{margin:0 0 64px}
+.end{border-top:1px solid var(--line);padding:56px 0 30px;text-align:center}
+.end h2{font-size:2rem;margin-bottom:8px}
+.end p{color:var(--chalk-dim);margin:0 0 26px}
+.big{display:inline-block;font-size:1rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:15px 30px;background:var(--flag);color:#10160F;border-radius:2px;text-decoration:none}
+.big:hover{filter:brightness(1.08)}
+.foot{border-top:1px solid var(--line);display:flex;gap:20px;flex-wrap:wrap;padding:18px 0 44px;font-family:var(--mono);font-size:.82rem;color:var(--chalk-dim)}
+.foot .rights{margin-left:auto;color:var(--chalk)}
+</style></head>
+<body>
+<div class="mast"><div class="mast-in">
+  <span class="logo-txt">Drive Wheel</span>
+  <a class="cta" href="https://nfl.drivewheel.football">See every NFL game</a>
+</div></div>
+
+<div class="wrap">
+  <h1>Read the game<br>like <em>a clock.</em></h1>
+  <p class="lede">A whole football game on one circle. Where a drive sits on the wheel is when it happened. How far it reaches is where it got to.</p>
+
+  <section>
+    <p class="eyebrow">One game, one circle</p>
+    <div class="figure"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1150.75" id="sampleWheel">
+<rect x="0" y="0" width="1080" height="1150.7524346690889" fill="#FBFAF6"></rect>
+<text x="10" y="34" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="21" font-weight="600" letter-spacing="1.2" fill="#26241F">WEEK 17 · DEC 28</text>
+<text x="10" y="57" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="18" font-weight="400" letter-spacing="0.2" fill="#4A4741">Levi's® Stadium</text>
+<text x="700" y="44" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="27" font-weight="600" letter-spacing="0.6" fill="#0B162A">CHI</text>
+<text x="836" y="44" text-anchor="end" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="30" font-weight="600" fill="#0B162A">38</text>
+<text x="958" y="44" text-anchor="end" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="17" fill="#0B162A">26:27</text>
+<text x="1070" y="44" text-anchor="end" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="17" fill="#0B162A">9 drives</text>
+<text x="700" y="84" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="27" font-weight="600" letter-spacing="0.6" fill="#AA0000">SF</text>
+<text x="836" y="84" text-anchor="end" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="30" font-weight="600" fill="#AA0000">42</text>
+<text x="958" y="84" text-anchor="end" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="17" fill="#AA0000">33:33</text>
+<text x="1070" y="84" text-anchor="end" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="17" fill="#AA0000">10 drives</text>
+<text x="540" y="21.95243466908869" text-anchor="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="21" font-weight="600" letter-spacing="1.6" fill="#4A4741">KICKOFF</text>
+<polygon points="618,7.952434669088689 631,15.952434669088689 618,23.95243466908869" fill="#0B162A"></polygon>
+<text x="540" y="1133.7524346690889" text-anchor="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="21" font-weight="600" letter-spacing="1.6" fill="#4A4741">HALFTIME</text>
+<polygon points="462,1119.7524346690889 449,1127.7524346690889 462,1135.7524346690889" fill="#AA0000"></polygon>
+<circle cx="540" cy="601.1524346690887" r="392" fill="#fff" stroke="#CBC8C1" stroke-width="1"></circle>
+<path d="M540,601.1524346690887 L540,209.2 A392,392 0 0 1 550.3,209.3 Z" fill="#AA0000" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
+<path d="M540,601.1524346690887 L550.3,209.3 A392,392 0 0 1 701.3,243.9 Z" fill="#AA0000" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
+<path d="M540,601.1524346690887 L701.3,243.9 A392,392 0 0 1 736.6,262 Z" fill="#0B162A" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
+<path d="M540,601.1524346690887 L736.6,262 A392,392 0 0 1 810.3,317.3 Z" fill="#AA0000" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
+<path d="M540,601.1524346690887 L810.3,317.3 A392,392 0 0 1 851.8,363.6 Z" fill="#0B162A" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
+<path d="M540,601.1524346690887 L851.8,363.6 A392,392 0 0 1 882.2,409.9 Z" fill="#AA0000" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
+<path d="M540,601.1524346690887 L882.2,409.9 A392,392 0 0 1 913.2,481.3 Z" fill="#0B162A" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
+<path d="M540,601.1524346690887 L913.2,481.3 A392,392 0 0 1 928.6,653 Z" fill="#AA0000" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
+<path d="M540,601.1524346690887 L928.6,653 A392,392 0 0 1 916.8,709.2 Z" fill="#0B162A" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
+<path d="M540,601.1524346690887 L916.8,709.2 A392,392 0 0 1 676,968.8 Z" fill="#AA0000" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
+<path d="M540,601.1524346690887 L676,968.8 A392,392 0 0 1 585.1,990.6 Z" fill="#0B162A" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
+<path d="M540,601.1524346690887 L585.1,990.6 A392,392 0 0 1 540,993.2 Z" fill="#AA0000" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
+<path d="M540,601.1524346690887 L540,993.2 A392,392 0 0 1 338.7,937.5 Z" fill="#0B162A" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
+<path d="M540,601.1524346690887 L338.7,937.5 A392,392 0 0 1 197.8,792.4 Z" fill="#AA0000" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
+<path d="M540,601.1524346690887 L197.8,792.4 A392,392 0 0 1 148,597 Z" fill="#0B162A" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
+<path d="M540,601.1524346690887 L148,597 A392,392 0 0 1 175.8,456.2 Z" fill="#AA0000" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
+<path d="M540,601.1524346690887 L175.8,456.2 A392,392 0 0 1 331.1,269.4 Z" fill="#0B162A" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
+<path d="M540,601.1524346690887 L331.1,269.4 A392,392 0 0 1 448.5,220 Z" fill="#AA0000" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
+<path d="M540,601.1524346690887 L448.5,220 A392,392 0 0 1 540,209.2 Z" fill="#0B162A" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
+<circle cx="540" cy="601.1524346690887" r="39.2" fill="none" stroke="#CFCCC5" stroke-width="1" pointer-events="none"></circle>
+<circle cx="540" cy="601.1524346690887" r="78.4" fill="none" stroke="#CFCCC5" stroke-width="1" pointer-events="none"></circle>
+<circle cx="540" cy="601.1524346690887" r="117.6" fill="none" stroke="#CFCCC5" stroke-width="1" pointer-events="none"></circle>
+<circle cx="540" cy="601.1524346690887" r="156.8" fill="none" stroke="#CFCCC5" stroke-width="1" pointer-events="none"></circle>
+<circle cx="540" cy="601.1524346690887" r="196" fill="none" stroke="#2B323C" stroke-width="1.3" pointer-events="none"></circle>
+<circle cx="540" cy="601.1524346690887" r="235.2" fill="none" stroke="#CFCCC5" stroke-width="1" pointer-events="none"></circle>
+<circle cx="540" cy="601.1524346690887" r="274.4" fill="none" stroke="#CFCCC5" stroke-width="1" pointer-events="none"></circle>
+<circle cx="540" cy="601.1524346690887" r="313.6" fill="none" stroke="#CFCCC5" stroke-width="1" pointer-events="none"></circle>
+<circle cx="540" cy="601.1524346690887" r="352.8" fill="none" stroke="#CFCCC5" stroke-width="1" pointer-events="none"></circle>
+<line x1="540" y1="204.2" x2="540" y2="183.2" stroke="#2B323C" stroke-width="2"></line>
+<line x1="581.5" y1="206.3" x2="582.4" y2="197.4" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="622.5" y1="212.8" x2="624.4" y2="204" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="662.7" y1="223.6" x2="665.5" y2="215" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="701.5" y1="238.5" x2="705.1" y2="230.3" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="738.5" y1="257.3" x2="747" y2="242.6" stroke="#2B323C" stroke-width="2"></line>
+<line x1="773.4" y1="280" x2="778.6" y2="272.7" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="805.6" y1="306.1" x2="811.7" y2="299.4" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="835" y1="335.5" x2="841.7" y2="329.5" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="861.2" y1="367.8" x2="868.5" y2="362.5" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="883.8" y1="402.7" x2="898.5" y2="394.2" stroke="#2B323C" stroke-width="2"></line>
+<line x1="902.7" y1="439.7" x2="910.9" y2="436" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="917.6" y1="478.5" x2="926.1" y2="475.7" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="928.3" y1="518.6" x2="937.1" y2="516.7" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="934.8" y1="559.7" x2="943.8" y2="558.7" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="937" y1="601.2" x2="958" y2="601.2" stroke="#2B323C" stroke-width="2"></line>
+<line x1="934.8" y1="642.7" x2="943.8" y2="643.6" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="928.3" y1="683.7" x2="937.1" y2="685.6" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="917.6" y1="723.8" x2="926.1" y2="726.6" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="902.7" y1="762.6" x2="910.9" y2="766.3" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="883.8" y1="799.7" x2="898.5" y2="808.2" stroke="#2B323C" stroke-width="2"></line>
+<line x1="861.2" y1="834.5" x2="868.5" y2="839.8" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="835" y1="866.8" x2="841.7" y2="872.8" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="805.6" y1="896.2" x2="811.7" y2="902.9" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="773.4" y1="922.3" x2="778.6" y2="929.6" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="738.5" y1="945" x2="747" y2="959.7" stroke="#2B323C" stroke-width="2"></line>
+<line x1="701.5" y1="963.8" x2="705.1" y2="972.1" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="662.7" y1="978.7" x2="665.5" y2="987.3" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="622.5" y1="989.5" x2="624.4" y2="998.3" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="581.5" y1="996" x2="582.4" y2="1004.9" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="540" y1="998.2" x2="540" y2="1019.2" stroke="#2B323C" stroke-width="2"></line>
+<line x1="498.5" y1="996" x2="497.6" y2="1004.9" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="457.5" y1="989.5" x2="455.6" y2="998.3" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="417.3" y1="978.7" x2="414.5" y2="987.3" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="378.5" y1="963.8" x2="374.9" y2="972.1" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="341.5" y1="945" x2="333" y2="959.7" stroke="#2B323C" stroke-width="2"></line>
+<line x1="306.6" y1="922.3" x2="301.4" y2="929.6" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="274.4" y1="896.2" x2="268.3" y2="902.9" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="245" y1="866.8" x2="238.3" y2="872.8" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="218.8" y1="834.5" x2="211.5" y2="839.8" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="196.2" y1="799.7" x2="181.5" y2="808.2" stroke="#2B323C" stroke-width="2"></line>
+<line x1="177.3" y1="762.6" x2="169.1" y2="766.3" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="162.4" y1="723.8" x2="153.9" y2="726.6" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="151.7" y1="683.7" x2="142.9" y2="685.6" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="145.2" y1="642.7" x2="136.2" y2="643.6" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="143" y1="601.2" x2="122" y2="601.2" stroke="#2B323C" stroke-width="2"></line>
+<line x1="145.2" y1="559.7" x2="136.2" y2="558.7" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="151.7" y1="518.6" x2="142.9" y2="516.7" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="162.4" y1="478.5" x2="153.9" y2="475.7" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="177.3" y1="439.7" x2="169.1" y2="436" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="196.2" y1="402.7" x2="181.5" y2="394.2" stroke="#2B323C" stroke-width="2"></line>
+<line x1="218.8" y1="367.8" x2="211.5" y2="362.5" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="245" y1="335.5" x2="238.3" y2="329.5" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="274.4" y1="306.1" x2="268.3" y2="299.4" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="306.6" y1="280" x2="301.4" y2="272.7" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="341.5" y1="257.3" x2="333" y2="242.6" stroke="#2B323C" stroke-width="2"></line>
+<line x1="378.5" y1="238.5" x2="374.9" y2="230.3" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="417.3" y1="223.6" x2="414.5" y2="215" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="457.5" y1="212.8" x2="455.6" y2="204" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="498.5" y1="206.3" x2="497.6" y2="197.4" stroke="#B8B5AE" stroke-width="1.2"></line>
+<line x1="540" y1="601.1524346690887" x2="540" y2="209.2" stroke="#2B323C" stroke-width="0.9" pointer-events="none"></line>
+<line x1="540" y1="601.1524346690887" x2="932" y2="601.2" stroke="#2B323C" stroke-width="0.9" stroke-dasharray="3 4" opacity="0.55" pointer-events="none"></line>
+<line x1="540" y1="601.1524346690887" x2="540" y2="993.2" stroke="#2B323C" stroke-width="1.3" pointer-events="none"></line>
+<line x1="540" y1="601.1524346690887" x2="148" y2="601.2" stroke="#2B323C" stroke-width="0.9" stroke-dasharray="3 4" opacity="0.55" pointer-events="none"></line>
+<line x1="540" y1="33.95243466908869" x2="540" y2="209.15243466908873" stroke="#2B323C" stroke-width="1.6"></line>
+<line x1="540" y1="993.1524346690887" x2="540" y2="1110.7524346690889" stroke="#2B323C" stroke-width="1.6"></line>
+<path d="M540,176.2 A425,425 0 0 1 551.1,176.3" fill="none" stroke="#C4C1BA" stroke-width="4" opacity="1"></path>
+<path d="M551.1,176.3 A425,425 0 0 1 714.9,213.8" fill="none" stroke="#0B162A" stroke-width="4" opacity="0.95"></path>
+<path d="M714.9,213.8 A425,425 0 0 1 753.1,233.5" fill="none" stroke="#C4C1BA" stroke-width="4" opacity="1"></path>
+<path d="M753.1,233.5 A425,425 0 0 1 833.1,293.4" fill="none" stroke="#C4C1BA" stroke-width="4" opacity="1"></path>
+<path d="M833.1,293.4 A425,425 0 0 1 878.1,343.6" fill="none" stroke="#C4C1BA" stroke-width="4" opacity="1"></path>
+<path d="M878.1,343.6 A425,425 0 0 1 911,393.8" fill="none" stroke="#C4C1BA" stroke-width="4" opacity="1"></path>
+<path d="M911,393.8 A425,425 0 0 1 944.7,471.2" fill="none" stroke="#AA0000" stroke-width="4" opacity="0.95"></path>
+<path d="M944.7,471.2 A425,425 0 0 1 961.3,657.4" fill="none" stroke="#C4C1BA" stroke-width="4" opacity="1"></path>
+<path d="M961.3,657.4 A425,425 0 0 1 948.5,718.3" fill="none" stroke="#AA0000" stroke-width="4" opacity="0.95"></path>
+<path d="M948.5,718.3 A425,425 0 0 1 687.4,999.8" fill="none" stroke="#C4C1BA" stroke-width="4" opacity="1"></path>
+<path d="M687.4,999.8 A425,425 0 0 1 588.8,1023.3" fill="none" stroke="#AA0000" stroke-width="4" opacity="0.95"></path>
+<path d="M588.8,1023.3 A425,425 0 0 1 540,1026.2" fill="none" stroke="#AA0000" stroke-width="4" opacity="0.95"></path>
+<path d="M540,1026.2 A425,425 0 0 1 321.7,965.8" fill="none" stroke="#AA0000" stroke-width="4" opacity="0.95"></path>
+<path d="M321.7,965.8 A425,425 0 0 1 169,808.5" fill="none" stroke="#C4C1BA" stroke-width="4" opacity="1"></path>
+<path d="M169,808.5 A425,425 0 0 1 115,596.7" fill="none" stroke="#AA0000" stroke-width="4" opacity="0.95"></path>
+<path d="M115,596.7 A425,425 0 0 1 145.1,444" fill="none" stroke="#C4C1BA" stroke-width="4" opacity="1"></path>
+<path d="M145.1,444 A425,425 0 0 1 313.5,241.5" fill="none" stroke="#C4C1BA" stroke-width="4" opacity="1"></path>
+<path d="M313.5,241.5 A425,425 0 0 1 440.8,187.9" fill="none" stroke="#0B162A" stroke-width="4" opacity="0.95"></path>
+<path d="M440.8,187.9 A425,425 0 0 1 540,176.2" fill="none" stroke="#AA0000" stroke-width="4" opacity="0.95"></path>
+<path d="M541.1,163.2 A438,438 0 0 1 550.3,163.3" fill="none" stroke="#0B162A" stroke-width="9" pointer-events="none"></path>
+<path d="M552.6,163.3 A438,438 0 0 1 719.2,201.5" fill="none" stroke="#AA0000" stroke-width="9" pointer-events="none"></path>
+<path d="M721.3,202.4 A438,438 0 0 1 758.7,221.6" fill="none" stroke="#8E8B84" stroke-width="5" pointer-events="none"></path>
+<path d="M760.7,222.8 A438,438 0 0 1 841.2,283.2" fill="none" stroke="#8E8B84" stroke-width="5" pointer-events="none"></path>
+<path d="M842.9,284.8 A438,438 0 0 1 887.7,334.8" fill="none" stroke="#8E8B84" stroke-width="5" pointer-events="none"></path>
+<path d="M889.1,336.6 A438,438 0 0 1 921.8,386.5" fill="none" stroke="#AA0000" stroke-width="9" pointer-events="none"></path>
+<path d="M922.9,388.5 A438,438 0 0 1 956.7,466.2" fill="none" stroke="#0B162A" stroke-width="9" pointer-events="none"></path>
+<path d="M957.4,468.4 A438,438 0 0 1 974.3,657.9" fill="none" stroke="#AA0000" stroke-width="9" pointer-events="none"></path>
+<path d="M974,660.2 A438,438 0 0 1 961.3,720.8" fill="none" stroke="#0B162A" stroke-width="9" pointer-events="none"></path>
+<path d="M960.7,723 A438,438 0 0 1 693,1011.5" fill="none" stroke="#AA0000" stroke-width="9" pointer-events="none"></path>
+<path d="M690.9,1012.3 A438,438 0 0 1 591.5,1036.1" fill="none" stroke="#8E8B84" stroke-width="5" pointer-events="none"></path>
+<path d="M589.2,1036.4 A438,438 0 0 1 541.1,1039.2" fill="none" stroke="#8E8B84" stroke-width="5" pointer-events="none"></path>
+<path d="M538.9,1039.2 A438,438 0 0 1 316.1,977.6" fill="none" stroke="#0B162A" stroke-width="9" pointer-events="none"></path>
+<path d="M314.1,976.4 A438,438 0 0 1 158.2,815.8" fill="none" stroke="#AA0000" stroke-width="9" pointer-events="none"></path>
+<path d="M157.1,813.8 A438,438 0 0 1 102,597.7" fill="none" stroke="#0B162A" stroke-width="9" pointer-events="none"></path>
+<path d="M102,595.4 A438,438 0 0 1 132.6,440.3" fill="none" stroke="#8E8B84" stroke-width="5" pointer-events="none"></path>
+<path d="M133.5,438.1 A438,438 0 0 1 305.6,231.1" fill="none" stroke="#0B162A" stroke-width="9" pointer-events="none"></path>
+<path d="M307.6,229.9 A438,438 0 0 1 436.6,175.5" fill="none" stroke="#AA0000" stroke-width="9" pointer-events="none"></path>
+<path d="M438.9,175 A438,438 0 0 1 538.9,163.2" fill="none" stroke="#8E8B84" stroke-width="5" pointer-events="none"></path>
+<g transform="translate(540,601.1524346690887) rotate(-89.2)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#0B162A">Pick 6 7</text></g>
+<g transform="translate(540,601.1524346690887) rotate(-77.1)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#AA0000">TD 7</text></g>
+<g transform="translate(540,601.1524346690887) rotate(-62.8)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="22" font-weight="500" letter-spacing="0.3" fill="#3F3D38">Punt</text></g>
+<g transform="translate(540,601.1524346690887) rotate(-53.1)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="22" font-weight="500" letter-spacing="0.3" fill="#3F3D38">Punt</text></g>
+<g transform="translate(540,601.1524346690887) rotate(-41.8)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="22" font-weight="500" letter-spacing="0.3" fill="#3F3D38">Punt</text></g>
+<g transform="translate(540,601.1524346690887) rotate(-33.2)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#AA0000">TD 14</text></g>
+<g transform="translate(540,601.1524346690887) rotate(-23.5)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#0B162A">TD 14</text></g>
+<g transform="translate(540,601.1524346690887) rotate(-5.1)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#AA0000">TD 21</text></g>
+<g transform="translate(540,601.1524346690887) rotate(11.8)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#0B162A">TD 21</text></g>
+<g transform="translate(540,601.1524346690887) rotate(42.8)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#AA0000">TD 28</text></g>
+<g transform="translate(540,601.1524346690887) rotate(76.6)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="22" font-weight="500" letter-spacing="0.3" fill="#3F3D38">Punt</text></g>
+<g transform="translate(540,601.1524346690887) rotate(86.7)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="22" font-weight="500" letter-spacing="0.3" fill="#3F3D38">Half</text></g>
+<g transform="translate(540,601.1524346690887) rotate(285.5)"><text x="-450" y="0" text-anchor="end" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#0B162A">TD 28</text></g>
+<g transform="translate(540,601.1524346690887) rotate(315.9)"><text x="-450" y="0" text-anchor="end" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#AA0000">TD 35</text></g>
+<g transform="translate(540,601.1524346690887) rotate(345.7)"><text x="-450" y="0" text-anchor="end" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#0B162A">TD 35</text></g>
+<g transform="translate(540,601.1524346690887) rotate(371.2)"><text x="-450" y="0" text-anchor="end" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="22" font-weight="500" letter-spacing="0.3" fill="#3F3D38">Punt</text></g>
+<g transform="translate(540,601.1524346690887) rotate(399.8)"><text x="-450" y="0" text-anchor="end" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#0B162A">FG 38</text></g>
+<g transform="translate(540,601.1524346690887) rotate(427.2)"><text x="-450" y="0" text-anchor="end" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#AA0000">TD 42</text></g>
+<g transform="translate(540,601.1524346690887) rotate(-65.9)" style="cursor: pointer;"><text x="397" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2" fill="#AA0000" stroke="#FBFAF6" stroke-width="2.4" paint-order="stroke">XP</text></g>
+<g transform="translate(540,601.1524346690887) rotate(-29.4)" style="cursor: pointer;"><text x="397" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2" fill="#AA0000" stroke="#FBFAF6" stroke-width="2.4" paint-order="stroke">XP</text></g>
+<g transform="translate(540,601.1524346690887) rotate(-18)" style="cursor: pointer;"><text x="397" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2" fill="#0B162A" stroke="#FBFAF6" stroke-width="2.4" paint-order="stroke">XP</text></g>
+<g transform="translate(540,601.1524346690887) rotate(7.3)" style="cursor: pointer;"><text x="397" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2" fill="#AA0000" stroke="#FBFAF6" stroke-width="2.4" paint-order="stroke">XP</text></g>
+<g transform="translate(540,601.1524346690887) rotate(15.8)" style="cursor: pointer;"><text x="397" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2" fill="#0B162A" stroke="#FBFAF6" stroke-width="2.4" paint-order="stroke">XP</text></g>
+<g transform="translate(540,601.1524346690887) rotate(69.4)" style="cursor: pointer;"><text x="397" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2" fill="#AA0000" stroke="#FBFAF6" stroke-width="2.4" paint-order="stroke">XP</text></g>
+<g transform="translate(540,601.1524346690887) rotate(300.7)" style="cursor: pointer;"><text x="-397" y="0" text-anchor="end" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2" fill="#0B162A" stroke="#FBFAF6" stroke-width="2.4" paint-order="stroke">XP</text></g>
+<g transform="translate(540,601.1524346690887) rotate(330.6)" style="cursor: pointer;"><text x="-397" y="0" text-anchor="end" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2" fill="#AA0000" stroke="#FBFAF6" stroke-width="2.4" paint-order="stroke">XP</text></g>
+<g transform="translate(540,601.1524346690887) rotate(360.4)" style="cursor: pointer;"><text x="-397" y="0" text-anchor="end" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2" fill="#0B162A" stroke="#FBFAF6" stroke-width="2.4" paint-order="stroke">XP</text></g>
+<g transform="translate(540,601.1524346690887) rotate(436.3)" style="cursor: pointer;"><text x="-397" y="0" text-anchor="end" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2" fill="#AA0000" stroke="#FBFAF6" stroke-width="2.4" paint-order="stroke">XP</text></g>
+<polyline points="541,507.1 543.5,467.9" fill="none" stroke="#AA0000" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
+<circle cx="541" cy="507.1" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<g style="cursor: pointer;"><circle cx="543.5" cy="467.9" r="9" fill="transparent"></circle><g stroke="#AA0000" stroke-width="2.4" stroke-linecap="round" pointer-events="none"><line x1="538" y1="462.4" x2="549" y2="473.4"></line><line x1="538" y1="473.4" x2="549" y2="462.4"></line></g></g>
+<line x1="543.5" y1="467.9" x2="540.2" y2="593.3" stroke="#0B162A" stroke-width="2" stroke-dasharray="5 4"></line>
+<polyline points="543.6,464 544.8,464 555.1,453 575.1,384.5 598.6,353.2 618.2,354.5 620.4,355.2 648.7,332.2 696.6,246.1 701.3,243.9" fill="none" stroke="#AA0000" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
+<circle cx="543.6" cy="464" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="544.8" cy="464" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="555.1" cy="453" r="3.8" fill="#AA0000"></circle>
+<circle cx="575.1" cy="384.5" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="598.6" cy="353.2" r="3.8" fill="#AA0000"></circle>
+<circle cx="618.2" cy="354.5" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="620.4" cy="355.2" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="648.7" cy="332.2" r="3.8" fill="#AA0000"></circle>
+<circle cx="696.6" cy="246.1" r="3.8" fill="#AA0000"></circle>
+<polyline points="587.7,498 606.3,476.6 607.1,477 609.1,478.1 610.8,479.1" fill="none" stroke="#0B162A" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
+<circle cx="587.7" cy="498" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="606.3" cy="476.6" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="607.1" cy="477" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="609.1" cy="478.1" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<polyline points="579.3,533.3 607.2,499.9 614.6,505.3 632.5,499.8 633.2,500.5 634.6,501.8" fill="none" stroke="#AA0000" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
+<circle cx="579.3" cy="533.3" r="3.8" fill="#AA0000"></circle>
+<circle cx="607.2" cy="499.9" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="614.6" cy="505.3" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="632.5" cy="499.8" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="633.2" cy="500.5" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<polyline points="583.3,555.7 592.2,553.7 607.2,547.1 607.6,547.6 608.6,548.9" fill="none" stroke="#0B162A" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
+<circle cx="583.3" cy="555.7" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="592.2" cy="553.7" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="607.2" cy="547.1" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="607.6" cy="547.6" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<g style="cursor: pointer;"><line x1="780.1" y1="418.2" x2="745.8" y2="444.4" stroke="transparent" stroke-width="12"></line><circle cx="780.1" cy="418.2" r="2" fill="none" stroke="#AA0000" stroke-width="1.1"></circle><line x1="780.1" y1="418.2" x2="745.8" y2="444.4" stroke="#AA0000" stroke-width="1.6" stroke-dasharray="4 3"></line></g>
+<polyline points="646,520.4 784.9,438.5 845.8,425.3 882.2,409.9" fill="none" stroke="#AA0000" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
+<circle cx="646" cy="520.4" r="3.8" fill="#AA0000"></circle>
+<circle cx="784.9" cy="438.5" r="3.8" fill="#AA0000"></circle>
+<circle cx="845.8" cy="425.3" r="3.8" fill="#AA0000"></circle>
+<polyline points="619.1,557.9 619.5,558.5 657.8,547.7 690.4,544.6 781.6,520.3 913.2,481.3" fill="none" stroke="#0B162A" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
+<circle cx="619.1" cy="557.9" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="619.5" cy="558.5" r="3.8" fill="#0B162A"></circle>
+<circle cx="657.8" cy="547.7" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<polygon points="695.6,542.7 688.8,550 685.6,541.6" fill="#D9A200" stroke="#8A6A00" stroke-width="0.7" stroke-linejoin="round"></polygon>
+<circle cx="781.6" cy="520.3" r="3.8" fill="#0B162A"></circle>
+<polyline points="633.3,571.2 633.5,571.8 749.8,551.6 779.5,559.8 784.5,566.4 801.8,580.5 798.7,601.2 849.2,618.4 909.5,647.2 928.6,653" fill="none" stroke="#AA0000" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
+<circle cx="633.3" cy="571.2" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="633.5" cy="571.8" r="3.8" fill="#AA0000"></circle>
+<circle cx="749.8" cy="551.6" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="779.5" cy="559.8" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="784.5" cy="566.4" r="3.8" fill="#AA0000"></circle>
+<circle cx="801.8" cy="580.5" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="798.7" cy="601.2" r="3.8" fill="#AA0000"></circle>
+<circle cx="849.2" cy="618.4" r="3.8" fill="#AA0000"></circle>
+<circle cx="909.5" cy="647.2" r="3.8" fill="#AA0000"></circle>
+<polyline points="676,619.3 744,640.4 782.1,666.9 916.8,709.2" fill="none" stroke="#0B162A" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
+<circle cx="676" cy="619.3" r="3.8" fill="#0B162A"></circle>
+<circle cx="744" cy="640.4" r="3.8" fill="#0B162A"></circle>
+<circle cx="782.1" cy="666.9" r="3.8" fill="#0B162A"></circle>
+<polyline points="645.1,632.7 657.6,644.9 690.4,668.1 695.9,683.7 723,715.1 691.6,712.5 724,760 722.6,761.6 751,811.4 745.7,837.8 738.6,863.8 736.4,899 712.3,904.5 700.4,928.5 701.9,945.2 674.4,956.8 676,968.8" fill="none" stroke="#AA0000" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
+<circle cx="645.1" cy="632.7" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="657.6" cy="644.9" r="3.8" fill="#AA0000"></circle>
+<circle cx="690.4" cy="668.1" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="695.9" cy="683.7" r="3.8" fill="#AA0000"></circle>
+<circle cx="723" cy="715.1" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="691.6" cy="712.5" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="724" cy="760" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="722.6" cy="761.6" r="3.8" fill="#AA0000"></circle>
+<circle cx="751" cy="811.4" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="745.7" cy="837.8" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="738.6" cy="863.8" r="3.8" fill="#AA0000"></circle>
+<circle cx="736.4" cy="899" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="712.3" cy="904.5" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<polygon points="702.8,933.5 694.8,927.4 702.9,923.4" fill="#D9A200" stroke="#8A6A00" stroke-width="0.7" stroke-linejoin="round"></polygon>
+<circle cx="701.9" cy="945.2" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="674.4" cy="956.8" r="3.8" fill="#AA0000"></circle>
+<polyline points="566.6,674.9 563.6,684.1 565.3,720 560.4,732.9 558.8,733.1 557.4,733.3 555.3,733.5" fill="none" stroke="#0B162A" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
+<circle cx="566.6" cy="674.9" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="563.6" cy="684.1" r="3.8" fill="#0B162A"></circle>
+<circle cx="565.3" cy="720" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="560.4" cy="732.9" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="558.8" cy="733.1" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="557.4" cy="733.3" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<polyline points="544.1,636.2 544.3,644.1 546,667.5 545.1,687.2 543.5,706.9 542.7,730.5 540,797.2" fill="none" stroke="#AA0000" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
+<circle cx="544.1" cy="636.2" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="544.3" cy="644.1" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="546" cy="667.5" r="3.8" fill="#AA0000"></circle>
+<circle cx="545.1" cy="687.2" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="543.5" cy="706.9" r="3.8" fill="#AA0000"></circle>
+<circle cx="542.7" cy="730.5" r="3.8" fill="#AA0000"></circle>
+<polyline points="540,738.4 528.4,781.1 515.4,807.5 497.8,824.6 485.4,813.8 473.2,802 431.4,865.9 372.1,942.3 346.8,933.2 345,932.2 338.7,937.5" fill="none" stroke="#0B162A" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
+<circle cx="540" cy="738.4" r="3.8" fill="#0B162A"></circle>
+<circle cx="528.4" cy="781.1" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="515.4" cy="807.5" r="3.8" fill="#0B162A"></circle>
+<circle cx="497.8" cy="824.6" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="485.4" cy="813.8" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="473.2" cy="802" r="3.8" fill="#0B162A"></circle>
+<circle cx="431.4" cy="865.9" r="3.8" fill="#0B162A"></circle>
+<circle cx="372.1" cy="942.3" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="346.8" cy="933.2" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="345" cy="932.2" r="3.8" fill="#0B162A"></circle>
+<polyline points="469.5,718.9 406.4,794.8 387.3,800.2 358.2,806.7 326.5,820 295.9,816.3 272.7,819.2 258.1,800 221.2,785.9 197.8,792.4" fill="none" stroke="#AA0000" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
+<circle cx="469.5" cy="718.9" r="3.8" fill="#AA0000"></circle>
+<circle cx="406.4" cy="794.8" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="387.3" cy="800.2" r="3.8" fill="#AA0000"></circle>
+<circle cx="358.2" cy="806.7" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="326.5" cy="820" r="3.8" fill="#AA0000"></circle>
+<polygon points="291.8,820 295.6,810.6 301.5,817.4" fill="#D9A200" stroke="#8A6A00" stroke-width="0.7" stroke-linejoin="round"></polygon>
+<circle cx="272.7" cy="819.2" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="258.1" cy="800" r="3.8" fill="#AA0000"></circle>
+<circle cx="221.2" cy="785.9" r="3.8" fill="#AA0000"></circle>
+<polyline points="471.2,638.8 451.6,643.5 412.7,652.3 402.5,647.2 402.2,646.5 298,667.4 302.1,650.9 256.8,642.5 294.5,628.3 269.6,608.7 234.2,601.2 148,597" fill="none" stroke="#0B162A" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
+<circle cx="471.2" cy="638.8" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="451.6" cy="643.5" r="3.8" fill="#0B162A"></circle>
+<circle cx="412.7" cy="652.3" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="402.5" cy="647.2" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="402.2" cy="646.5" r="3.8" fill="#0B162A"></circle>
+<circle cx="298" cy="667.4" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="302.1" cy="650.9" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<polygon points="262.3,641.7 252.7,638.5 254,647.4" fill="#D9A200" stroke="#8A6A00" stroke-width="0.7" stroke-linejoin="round"></polygon>
+<circle cx="294.5" cy="628.3" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="269.6" cy="608.7" r="3.8" fill="#0B162A"></circle>
+<circle cx="234.2" cy="601.2" r="3.8" fill="#0B162A"></circle>
+<polyline points="418.5,598.6 387.6,588.6 427.2,586.9 409.3,575 336.4,543.2 336.9,541.4 331,522.2 331.4,521.1 332.4,518.5" fill="none" stroke="#AA0000" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
+<circle cx="418.5" cy="598.6" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<polygon points="393.1,589.1 384.5,583.9 383.8,592.8" fill="#D9A200" stroke="#8A6A00" stroke-width="0.7" stroke-linejoin="round"></polygon>
+<circle cx="427.2" cy="586.9" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="409.3" cy="575" r="3.8" fill="#AA0000"></circle>
+<circle cx="336.4" cy="543.2" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="336.9" cy="541.4" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="331" cy="522.2" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="331.4" cy="521.1" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<polyline points="499.9,585.2 413.1,539.5 407.3,525.2 393.6,502.8 391.3,485.8 308.8,389.3 323.2,402.5 327.2,376.1 307.6,335.7 320.5,315 349,309.2 352,307.2 354.1,305.9" fill="none" stroke="#0B162A" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
+<circle cx="499.9" cy="585.2" r="3.8" fill="#0B162A"></circle>
+<circle cx="413.1" cy="539.5" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="407.3" cy="525.2" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="393.6" cy="502.8" r="3.8" fill="#0B162A"></circle>
+<circle cx="391.3" cy="485.8" r="3.8" fill="#0B162A"></circle>
+<polygon points="312.8,393 309.2,383.6 303.2,390.2" fill="#D9A200" stroke="#8A6A00" stroke-width="0.7" stroke-linejoin="round"></polygon>
+<circle cx="323.2" cy="402.5" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<polygon points="323.4,372.2 332.9,375.6 326.4,381.8" fill="#D9A200" stroke="#8A6A00" stroke-width="0.7" stroke-linejoin="round"></polygon>
+<circle cx="307.6" cy="335.7" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="320.5" cy="315" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="349" cy="309.2" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="352" cy="307.2" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<rect x="350.1" y="301.9" width="8" height="8" fill="#0B162A" transform="rotate(45 354.1 305.9)" pointer-events="none"></rect>
+<polyline points="488.5,517.8 487.2,500.5 488,500 483.3,471.9 488.2,457.3 482.7,438.5 463.3,370.5 480,365.6 448.5,220" fill="none" stroke="#AA0000" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
+<circle cx="488.5" cy="517.8" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="487.2" cy="500.5" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="488" cy="500" r="3.8" fill="#AA0000"></circle>
+<circle cx="483.3" cy="471.9" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<polygon points="486.4,452.1 493.6,459.1 485.2,462.1" fill="#D9A200" stroke="#8A6A00" stroke-width="0.7" stroke-linejoin="round"></polygon>
+<circle cx="482.7" cy="438.5" r="3.8" fill="#AA0000"></circle>
+<circle cx="463.3" cy="370.5" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
+<circle cx="480" cy="365.6" r="3.8" fill="#AA0000"></circle>
+<polyline points="508,467.7 507.4,447.8 504.8,428.3 506,428.1 510.8,403.4 511.1,387.5 512.6,387.3 514.1,387.1 518.8,331.5 519.8,311.8 521.8,311.6 523.3,311.6 524.5,260.5 527.5,260.3 536.6,217 537.3,217 540,217" fill="none" stroke="#0B162A" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
+<circle cx="508" cy="467.7" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<polygon points="506.3,442.4 512.5,450.3 503.7,452.1" fill="#D9A200" stroke="#8A6A00" stroke-width="0.7" stroke-linejoin="round"></polygon>
+<circle cx="504.8" cy="428.3" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="506" cy="428.1" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="510.8" cy="403.4" r="3.8" fill="#0B162A"></circle>
+<circle cx="511.1" cy="387.5" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="512.6" cy="387.3" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="514.1" cy="387.1" r="3.8" fill="#0B162A"></circle>
+<circle cx="518.8" cy="331.5" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="519.8" cy="311.8" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="521.8" cy="311.6" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="523.3" cy="311.6" r="3.8" fill="#0B162A"></circle>
+<circle cx="524.5" cy="260.5" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="527.5" cy="260.3" r="3.8" fill="#0B162A"></circle>
+<circle cx="536.6" cy="217" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="537.3" cy="217" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
+<circle cx="540" cy="601.1524346690887" r="2.2" fill="#2B323C"></circle>
+</svg></div>
+    <p class="caption">Chicago at San Francisco, Week 17, 2025. Every drive of the game, in order, around the clock.</p>
+  </section>
+
+  <div class="cards">
+    <div class="card">
+      <p class="eyebrow">Around</p>
+      <h2>Time is the angle</h2>
+      <p>Kickoff is at twelve. The game runs clockwise, a full turn for sixty minutes, so halftime lands at the bottom. A wide wedge is a long drive; a narrow one went three and out.</p>
+    </div>
+    <div class="card">
+      <p class="eyebrow">Outward</p>
+      <h2>Distance is the field</h2>
+      <p>The center is the offense's own goal line and the rim is the end zone they are attacking. Each dot is a snap, and the line traces the drive working its way out. The heavier ring halfway out is the fifty.</p>
+    </div>
+    <div class="card">
+      <p class="eyebrow">At the edge</p>
+      <h2>The rim is the outcome</h2>
+      <p>Every drive ends on a band at the rim, thick and colored if it scored and thin grey if it didn't, labeled with the result and the new score. The ring just inside shows who was ahead at that moment.</p>
+    </div>
+  </div>
+
+  <section>
+    <p class="eyebrow">The marks</p>
+    <h2 style="margin-bottom:22px">What each shape means</h2>
+    <ul class="keys">
+      <li><svg width="26" height="14"><circle cx="13" cy="7" r="4.4" fill="#C3CEC8"/></svg><span><b>A first down.</b> Solid dots moved the chains.</span></li>
+      <li><svg width="26" height="14"><circle cx="13" cy="7" r="4" fill="none" stroke="#C3CEC8" stroke-width="1.8"/></svg><span><b>Any other snap.</b> Hollow dots did not.</span></li>
+      <li><svg width="26" height="14"><polygon points="18,7 9,12 9,2" fill="#F5C518" stroke="#8A6A00" stroke-width="0.8"/></svg><span><b>A penalty.</b> The triangle points at the team the flag was on.</span></li>
+      <li><svg width="26" height="14"><g stroke="#C3CEC8" stroke-width="2.4" stroke-linecap="round"><line x1="8" y1="2" x2="18" y2="12"/><line x1="8" y1="12" x2="18" y2="2"/></g></svg><span><b>A turnover,</b> at the spot it happened.</span></li>
+      <li><svg width="26" height="14"><line x1="1" y1="7" x2="25" y2="7" stroke="#C3CEC8" stroke-width="2" stroke-dasharray="4 3"/></svg><span><b>A return</b> by the other team, in their color.</span></li>
+      <li><svg width="26" height="14"><rect x="9" y="3" width="8" height="8" fill="#C3CEC8" transform="rotate(45 13 7)"/></svg><span><b>A field goal attempt,</b> at the spot of the kick.</span></li>
+      <li><svg width="26" height="14"><path d="M1,12 A16,16 0 0,1 25,12" fill="none" stroke="#C3CEC8" stroke-width="5.5"/></svg><span><b>A scoring drive,</b> in the scoring team's color.</span></li>
+      <li><svg width="26" height="14"><path d="M1,12 A16,16 0 0,1 25,12" fill="none" stroke="#7C8A83" stroke-width="2.8"/></svg><span><b>A drive that didn't score.</b></span></li>
+      <li><svg width="26" height="14"><text x="13" y="11" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="10" font-weight="600" fill="#C3CEC8">XP</text></svg><span><b>The try after a touchdown</b> — XP or 2PT, grey if it missed.</span></li>
+      <li><svg width="26" height="14"><line x1="13" y1="0" x2="13" y2="14" stroke="#C3CEC8" stroke-width="1.8"/></svg><span><b>The vertical line</b> splits the halves: kickoff at the top, halftime at the bottom.</span></li>
+    </ul>
+    <p style="color:var(--chalk-faint);font-size:.94rem;max-width:60ch">On the live wheels, hovering a wedge gives you the drive and clicking any mark gives you the play it came from.</p>
+  </section>
+
+  <section>
+    <p class="eyebrow">Below the wheel</p>
+    <h2>Score, and overtime</h2>
+    <p style="color:var(--chalk-dim);max-width:62ch;margin-top:12px">Under each wheel is the running score through regulation, lined up so its halftime matches the wheel's. If the game went to overtime, a straight field follows: the yard lines run across, the clock runs down, and the two teams attack opposite ends the way a traditional drive chart shows it.</p>
+  </section>
+
+  <div class="end">
+    <h2>Every NFL game, 2025 on.</h2>
+    <p>Pick a team, a week, a game.</p>
+    <a class="big" href="https://nfl.drivewheel.football">Open the wheels</a>
+  </div>
+
+  <div class="foot">
+    <span>Data: nflverse</span>
+    <span class="rights">© 2026 Eric Mineart</span>
+  </div>
+</div>
+</body></html>
