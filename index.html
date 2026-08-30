@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Drive Wheel · How to read it</title>
-<meta name="description" content="One circle, sixty minutes. Angle is the clock, distance is the field. How to read a Drive Wheel.">
+<title>Drive Wheel · NFL</title>
+<meta name="description" content="Read the game like a clock. Every NFL drive on one circle: angle is the clock, distance is the field.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -11,456 +11,627 @@
   --ink:#080D0B; --turf:#0F1815; --turf-2:#16221E; --line:#2E4038; --line-2:#4A6156;
   --chalk:#F4F2EC; --chalk-dim:#C3CEC8; --chalk-faint:#9CAAA3; --flag:#F5C518; --paper:#FBFAF6;
   --display:'IBM Plex Sans',system-ui,sans-serif;
+  --body:'IBM Plex Sans',system-ui,sans-serif;
   --mono:'IBM Plex Mono',ui-monospace,monospace;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--ink);color:var(--chalk);font-family:var(--display);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--flag);outline-offset:3px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-.mast{position:sticky;top:0;z-index:60;background:rgba(8,13,11,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.mast-in{max-width:1080px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:16px}
-.logo-txt{font-weight:600;font-size:1.35rem;letter-spacing:.06em;text-transform:uppercase;line-height:1}
-.cta{margin-left:auto;font-size:.86rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:10px 16px;border:1px solid var(--line-2);border-radius:2px;text-decoration:none;white-space:nowrap}
-.cta:hover{border-color:var(--chalk-dim);background:var(--turf-2)}
-h1{font-size:clamp(2.6rem,7vw,4.6rem);line-height:.98;font-weight:700;letter-spacing:-.02em;margin:56px 0 20px}
-h1 em{font-style:normal;color:var(--flag)}
-.lede{font-size:clamp(1.1rem,2.2vw,1.35rem);color:var(--chalk-dim);max-width:44ch;margin:0 0 44px}
-h2{font-size:1.6rem;font-weight:600;letter-spacing:-.01em;margin:0 0 12px}
-.eyebrow{font-family:var(--mono);font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--chalk-faint);margin:0 0 10px}
-.figure{background:var(--paper);border-radius:4px;padding:10px;margin:0 0 12px}
-.figure svg{width:100%;height:auto;display:block}
-.caption{font-family:var(--mono);font-size:.8rem;color:var(--chalk-faint);margin:0 0 64px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 0 64px}
-.card{background:var(--ink);padding:28px 26px}
-.card h2{min-height:2.6rem}
-.card p{margin:0;color:var(--chalk-dim);font-size:.98rem}
-.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px 34px;margin:0 0 20px;padding:0;list-style:none}
-.keys li{display:flex;align-items:flex-start;gap:13px;font-size:.98rem;color:var(--chalk-dim)}
-.keys svg{flex:none;margin-top:5px}
-.keys b{color:var(--chalk);font-weight:600}
-section{margin:0 0 64px}
-.end{border-top:1px solid var(--line);padding:56px 0 30px;text-align:center}
-.end h2{font-size:2rem;margin-bottom:8px}
-.end p{color:var(--chalk-dim);margin:0 0 26px}
-.big{display:inline-block;font-size:1rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:15px 30px;background:var(--flag);color:#10160F;border-radius:2px;text-decoration:none}
-.big:hover{filter:brightness(1.08)}
-.foot{border-top:1px solid var(--line);display:flex;gap:20px;flex-wrap:wrap;padding:18px 0 44px;font-family:var(--mono);font-size:.82rem;color:var(--chalk-dim)}
+body{margin:0;background:var(--ink);color:var(--chalk);font-family:var(--body);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+button,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--flag);outline-offset:2px}
+.mast{position:sticky;top:0;z-index:60;background:rgba(8,13,11,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.mast-in{max-width:1900px;margin:0 auto;padding:9px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.logo-txt{font-family:var(--display);font-weight:600;font-size:1.35rem;letter-spacing:.06em;text-transform:uppercase;line-height:1;margin-right:4px;white-space:nowrap}
+select{appearance:none;-webkit-appearance:none;background:var(--turf);border:1px solid var(--line-2);border-radius:2px;color:var(--chalk);padding:8px 32px 8px 11px;font-size:.94rem;max-width:100%;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23C3CEC8' stroke-width='1.4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center}
+select:hover{border-color:var(--chalk-dim)}
+select#game{max-width:330px;text-overflow:ellipsis}
+select#season{font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;color:var(--chalk)}
+.btn{font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:9px 13px;border:1px solid var(--line-2);border-radius:2px;background:none;cursor:pointer;color:var(--chalk);white-space:nowrap}
+.btn:hover{border-color:var(--chalk-dim);background:var(--turf-2)}
+.zoom,.nav{display:flex;gap:4px;flex:none}
+.controls{display:contents}
+.menu{display:none;align-items:center;gap:8px}
+.menu .chev{transition:transform .15s;display:inline-block}
+.menu[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.share{margin-left:auto;display:flex;gap:6px;align-items:center}
+.share .lbl{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--chalk-dim);margin-right:2px}
+.wrap{max-width:1900px;margin:0 auto;padding:8px 14px 0}
+.card{background:var(--paper);border-radius:3px;padding:6px 6px 2px;margin-bottom:22px;position:relative}
+.hud{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding:12px 16px 0;pointer-events:none}
+.hud .meta{font-family:var(--display);color:#26241F}
+.hud .meta .wk{font-size:1.32rem;font-weight:600;letter-spacing:.06em;line-height:1.2}
+.hud .meta .stad{font-size:1.08rem;font-weight:400;color:#4A4741;line-height:1.3}
+.hud table{border-collapse:collapse;font-family:var(--mono);font-size:1.02rem}
+.hud td{padding:0 0 6px 22px;text-align:right;white-space:nowrap;line-height:1.2}
+.hud td.tm{padding-left:0;text-align:left;font-family:var(--display);font-size:1.38rem;font-weight:600;letter-spacing:.04em}
+.hud td.sc{font-size:1.55rem;font-weight:600}
+@media (max-width:820px){
+  .hud{position:static;flex-wrap:wrap;gap:4px 14px;padding:8px 10px 2px}
+  .hud .meta .wk{font-size:.95rem;letter-spacing:.04em}
+  .hud .meta .stad{font-size:.85rem}
+  .hud table{font-size:.8rem}
+  .hud td{padding:0 0 2px 12px}
+  .hud td.tm{font-size:1rem}
+  .hud td.sc{font-size:1.05rem}
+}
+.fit{margin:0 auto}
+.fit svg{width:100%;height:auto;display:block}
+.wedge{cursor:pointer;transition:fill-opacity .12s}
+.dot{cursor:pointer}
+.dot:hover{stroke:#080D0B;stroke-width:1.8}
+.tip{position:fixed;pointer-events:none;background:#141B23;color:#F4F6F8;font-size:.98rem;line-height:1.5;padding:13px 16px;border-radius:4px;max-width:430px;box-shadow:0 6px 18px rgba(0,0,0,.35);opacity:0;transition:opacity .1s;z-index:100}
+.tip.on{opacity:1}
+.tip b{font-family:var(--display);font-size:1.2rem;font-weight:600;letter-spacing:.02em}
+.tip .k{font-family:var(--mono);font-size:.8rem;color:#AEB8C4;letter-spacing:.04em}
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:#12181F;color:#fff;font-family:var(--mono);font-size:.76rem;padding:9px 16px;border-radius:3px;opacity:0;transition:.2s;z-index:120}
+.toast.on{opacity:1;transform:translateX(-50%)}
+.foot{max-width:1900px;margin:0 auto;display:flex;gap:20px;flex-wrap:wrap;align-items:center;padding:10px 14px 34px;font-family:var(--mono);font-size:.84rem;color:var(--chalk-dim)}
 .foot .rights{margin-left:auto;color:var(--chalk)}
+.foot .how{color:var(--chalk);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:2px}
+.foot .how:hover{border-bottom-color:var(--chalk-dim)}
+.loading{color:var(--chalk-faint);padding:60px 0;text-align:center;font-family:var(--mono)}
+@media (max-width:820px){
+  .mast-in{padding:8px 12px;gap:8px}
+  .menu{display:inline-flex;margin-left:auto}
+  .controls{display:none}
+  .controls.open{display:flex;flex-wrap:wrap;gap:8px;width:100%;padding-top:8px}
+  .controls.open select{flex:1 1 44%;min-width:0}
+  .controls.open .nav,.controls.open .zoom{flex:0 0 auto}
+  /* the share row reads better under the chart than competing with the picker */
+  .share{margin-left:0;width:100%;justify-content:flex-end;padding:0 2px 18px}
+}
 </style></head>
 <body>
 <div class="mast"><div class="mast-in">
   <span class="logo-txt">Drive Wheel</span>
-  <a class="cta" href="https://nfl.drivewheel.football">See every NFL game</a>
+  <button class="btn menu" id="menu" aria-expanded="false" aria-controls="controls"><span id="menuLabel">Games</span> <span class="chev">▾</span></button>
+  <div class="controls" id="controls">
+    <select id="season" title="Season"></select>
+    <select id="team" title="Team"></select>
+    <select id="week" title="Week"></select>
+    <select id="game" title="Game"></select>
+    <span class="nav"><button class="btn" id="prev" title="Previous game">‹</button><button class="btn" id="next" title="Next game">›</button></span>
+    <span class="zoom"><button class="btn" id="zout" title="Smaller">−</button><button class="btn" id="zin" title="Larger">+</button></span>
+  </div>
+  <div class="share" id="share">
+    <span class="lbl">SHARE</span>
+    <button class="btn" id="shLink" title="Copy a link to this game">Link</button>
+    <button class="btn" id="shX" title="Share on X">X</button>
+  </div>
 </div></div>
-
 <div class="wrap">
-  <h1>Read the game<br>like <em>a clock.</em></h1>
-  <p class="lede">A whole football game on one circle. Where a drive sits on the wheel is when it happened. How far it reaches is where it got to.</p>
-
-  <section>
-    <p class="eyebrow">One game, one circle</p>
-    <div class="figure"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1150.75" id="sampleWheel">
-<rect x="0" y="0" width="1080" height="1150.7524346690889" fill="#FBFAF6"></rect>
-<text x="10" y="34" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="21" font-weight="600" letter-spacing="1.2" fill="#26241F">WEEK 17 · DEC 28</text>
-<text x="10" y="57" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="18" font-weight="400" letter-spacing="0.2" fill="#4A4741">Levi's® Stadium</text>
-<text x="700" y="44" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="27" font-weight="600" letter-spacing="0.6" fill="#0B162A">CHI</text>
-<text x="836" y="44" text-anchor="end" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="30" font-weight="600" fill="#0B162A">38</text>
-<text x="958" y="44" text-anchor="end" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="17" fill="#0B162A">26:27</text>
-<text x="1070" y="44" text-anchor="end" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="17" fill="#0B162A">9 drives</text>
-<text x="700" y="84" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="27" font-weight="600" letter-spacing="0.6" fill="#AA0000">SF</text>
-<text x="836" y="84" text-anchor="end" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="30" font-weight="600" fill="#AA0000">42</text>
-<text x="958" y="84" text-anchor="end" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="17" fill="#AA0000">33:33</text>
-<text x="1070" y="84" text-anchor="end" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="17" fill="#AA0000">10 drives</text>
-<text x="540" y="21.95243466908869" text-anchor="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="21" font-weight="600" letter-spacing="1.6" fill="#4A4741">KICKOFF</text>
-<polygon points="618,7.952434669088689 631,15.952434669088689 618,23.95243466908869" fill="#0B162A"></polygon>
-<text x="540" y="1133.7524346690889" text-anchor="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="21" font-weight="600" letter-spacing="1.6" fill="#4A4741">HALFTIME</text>
-<polygon points="462,1119.7524346690889 449,1127.7524346690889 462,1135.7524346690889" fill="#AA0000"></polygon>
-<circle cx="540" cy="601.1524346690887" r="392" fill="#fff" stroke="#CBC8C1" stroke-width="1"></circle>
-<path d="M540,601.1524346690887 L540,209.2 A392,392 0 0 1 550.3,209.3 Z" fill="#AA0000" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
-<path d="M540,601.1524346690887 L550.3,209.3 A392,392 0 0 1 701.3,243.9 Z" fill="#AA0000" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
-<path d="M540,601.1524346690887 L701.3,243.9 A392,392 0 0 1 736.6,262 Z" fill="#0B162A" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
-<path d="M540,601.1524346690887 L736.6,262 A392,392 0 0 1 810.3,317.3 Z" fill="#AA0000" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
-<path d="M540,601.1524346690887 L810.3,317.3 A392,392 0 0 1 851.8,363.6 Z" fill="#0B162A" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
-<path d="M540,601.1524346690887 L851.8,363.6 A392,392 0 0 1 882.2,409.9 Z" fill="#AA0000" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
-<path d="M540,601.1524346690887 L882.2,409.9 A392,392 0 0 1 913.2,481.3 Z" fill="#0B162A" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
-<path d="M540,601.1524346690887 L913.2,481.3 A392,392 0 0 1 928.6,653 Z" fill="#AA0000" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
-<path d="M540,601.1524346690887 L928.6,653 A392,392 0 0 1 916.8,709.2 Z" fill="#0B162A" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
-<path d="M540,601.1524346690887 L916.8,709.2 A392,392 0 0 1 676,968.8 Z" fill="#AA0000" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
-<path d="M540,601.1524346690887 L676,968.8 A392,392 0 0 1 585.1,990.6 Z" fill="#0B162A" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
-<path d="M540,601.1524346690887 L585.1,990.6 A392,392 0 0 1 540,993.2 Z" fill="#AA0000" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
-<path d="M540,601.1524346690887 L540,993.2 A392,392 0 0 1 338.7,937.5 Z" fill="#0B162A" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
-<path d="M540,601.1524346690887 L338.7,937.5 A392,392 0 0 1 197.8,792.4 Z" fill="#AA0000" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
-<path d="M540,601.1524346690887 L197.8,792.4 A392,392 0 0 1 148,597 Z" fill="#0B162A" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
-<path d="M540,601.1524346690887 L148,597 A392,392 0 0 1 175.8,456.2 Z" fill="#AA0000" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
-<path d="M540,601.1524346690887 L175.8,456.2 A392,392 0 0 1 331.1,269.4 Z" fill="#0B162A" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
-<path d="M540,601.1524346690887 L331.1,269.4 A392,392 0 0 1 448.5,220 Z" fill="#AA0000" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
-<path d="M540,601.1524346690887 L448.5,220 A392,392 0 0 1 540,209.2 Z" fill="#0B162A" fill-opacity="0.13" stroke="#FBFAF6" stroke-width="1"></path>
-<circle cx="540" cy="601.1524346690887" r="39.2" fill="none" stroke="#CFCCC5" stroke-width="1" pointer-events="none"></circle>
-<circle cx="540" cy="601.1524346690887" r="78.4" fill="none" stroke="#CFCCC5" stroke-width="1" pointer-events="none"></circle>
-<circle cx="540" cy="601.1524346690887" r="117.6" fill="none" stroke="#CFCCC5" stroke-width="1" pointer-events="none"></circle>
-<circle cx="540" cy="601.1524346690887" r="156.8" fill="none" stroke="#CFCCC5" stroke-width="1" pointer-events="none"></circle>
-<circle cx="540" cy="601.1524346690887" r="196" fill="none" stroke="#2B323C" stroke-width="1.3" pointer-events="none"></circle>
-<circle cx="540" cy="601.1524346690887" r="235.2" fill="none" stroke="#CFCCC5" stroke-width="1" pointer-events="none"></circle>
-<circle cx="540" cy="601.1524346690887" r="274.4" fill="none" stroke="#CFCCC5" stroke-width="1" pointer-events="none"></circle>
-<circle cx="540" cy="601.1524346690887" r="313.6" fill="none" stroke="#CFCCC5" stroke-width="1" pointer-events="none"></circle>
-<circle cx="540" cy="601.1524346690887" r="352.8" fill="none" stroke="#CFCCC5" stroke-width="1" pointer-events="none"></circle>
-<line x1="540" y1="204.2" x2="540" y2="183.2" stroke="#2B323C" stroke-width="2"></line>
-<line x1="581.5" y1="206.3" x2="582.4" y2="197.4" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="622.5" y1="212.8" x2="624.4" y2="204" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="662.7" y1="223.6" x2="665.5" y2="215" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="701.5" y1="238.5" x2="705.1" y2="230.3" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="738.5" y1="257.3" x2="747" y2="242.6" stroke="#2B323C" stroke-width="2"></line>
-<line x1="773.4" y1="280" x2="778.6" y2="272.7" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="805.6" y1="306.1" x2="811.7" y2="299.4" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="835" y1="335.5" x2="841.7" y2="329.5" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="861.2" y1="367.8" x2="868.5" y2="362.5" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="883.8" y1="402.7" x2="898.5" y2="394.2" stroke="#2B323C" stroke-width="2"></line>
-<line x1="902.7" y1="439.7" x2="910.9" y2="436" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="917.6" y1="478.5" x2="926.1" y2="475.7" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="928.3" y1="518.6" x2="937.1" y2="516.7" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="934.8" y1="559.7" x2="943.8" y2="558.7" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="937" y1="601.2" x2="958" y2="601.2" stroke="#2B323C" stroke-width="2"></line>
-<line x1="934.8" y1="642.7" x2="943.8" y2="643.6" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="928.3" y1="683.7" x2="937.1" y2="685.6" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="917.6" y1="723.8" x2="926.1" y2="726.6" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="902.7" y1="762.6" x2="910.9" y2="766.3" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="883.8" y1="799.7" x2="898.5" y2="808.2" stroke="#2B323C" stroke-width="2"></line>
-<line x1="861.2" y1="834.5" x2="868.5" y2="839.8" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="835" y1="866.8" x2="841.7" y2="872.8" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="805.6" y1="896.2" x2="811.7" y2="902.9" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="773.4" y1="922.3" x2="778.6" y2="929.6" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="738.5" y1="945" x2="747" y2="959.7" stroke="#2B323C" stroke-width="2"></line>
-<line x1="701.5" y1="963.8" x2="705.1" y2="972.1" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="662.7" y1="978.7" x2="665.5" y2="987.3" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="622.5" y1="989.5" x2="624.4" y2="998.3" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="581.5" y1="996" x2="582.4" y2="1004.9" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="540" y1="998.2" x2="540" y2="1019.2" stroke="#2B323C" stroke-width="2"></line>
-<line x1="498.5" y1="996" x2="497.6" y2="1004.9" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="457.5" y1="989.5" x2="455.6" y2="998.3" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="417.3" y1="978.7" x2="414.5" y2="987.3" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="378.5" y1="963.8" x2="374.9" y2="972.1" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="341.5" y1="945" x2="333" y2="959.7" stroke="#2B323C" stroke-width="2"></line>
-<line x1="306.6" y1="922.3" x2="301.4" y2="929.6" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="274.4" y1="896.2" x2="268.3" y2="902.9" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="245" y1="866.8" x2="238.3" y2="872.8" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="218.8" y1="834.5" x2="211.5" y2="839.8" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="196.2" y1="799.7" x2="181.5" y2="808.2" stroke="#2B323C" stroke-width="2"></line>
-<line x1="177.3" y1="762.6" x2="169.1" y2="766.3" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="162.4" y1="723.8" x2="153.9" y2="726.6" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="151.7" y1="683.7" x2="142.9" y2="685.6" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="145.2" y1="642.7" x2="136.2" y2="643.6" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="143" y1="601.2" x2="122" y2="601.2" stroke="#2B323C" stroke-width="2"></line>
-<line x1="145.2" y1="559.7" x2="136.2" y2="558.7" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="151.7" y1="518.6" x2="142.9" y2="516.7" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="162.4" y1="478.5" x2="153.9" y2="475.7" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="177.3" y1="439.7" x2="169.1" y2="436" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="196.2" y1="402.7" x2="181.5" y2="394.2" stroke="#2B323C" stroke-width="2"></line>
-<line x1="218.8" y1="367.8" x2="211.5" y2="362.5" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="245" y1="335.5" x2="238.3" y2="329.5" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="274.4" y1="306.1" x2="268.3" y2="299.4" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="306.6" y1="280" x2="301.4" y2="272.7" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="341.5" y1="257.3" x2="333" y2="242.6" stroke="#2B323C" stroke-width="2"></line>
-<line x1="378.5" y1="238.5" x2="374.9" y2="230.3" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="417.3" y1="223.6" x2="414.5" y2="215" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="457.5" y1="212.8" x2="455.6" y2="204" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="498.5" y1="206.3" x2="497.6" y2="197.4" stroke="#B8B5AE" stroke-width="1.2"></line>
-<line x1="540" y1="601.1524346690887" x2="540" y2="209.2" stroke="#2B323C" stroke-width="0.9" pointer-events="none"></line>
-<line x1="540" y1="601.1524346690887" x2="932" y2="601.2" stroke="#2B323C" stroke-width="0.9" stroke-dasharray="3 4" opacity="0.55" pointer-events="none"></line>
-<line x1="540" y1="601.1524346690887" x2="540" y2="993.2" stroke="#2B323C" stroke-width="1.3" pointer-events="none"></line>
-<line x1="540" y1="601.1524346690887" x2="148" y2="601.2" stroke="#2B323C" stroke-width="0.9" stroke-dasharray="3 4" opacity="0.55" pointer-events="none"></line>
-<line x1="540" y1="33.95243466908869" x2="540" y2="209.15243466908873" stroke="#2B323C" stroke-width="1.6"></line>
-<line x1="540" y1="993.1524346690887" x2="540" y2="1110.7524346690889" stroke="#2B323C" stroke-width="1.6"></line>
-<path d="M540,176.2 A425,425 0 0 1 551.1,176.3" fill="none" stroke="#C4C1BA" stroke-width="4" opacity="1"></path>
-<path d="M551.1,176.3 A425,425 0 0 1 714.9,213.8" fill="none" stroke="#0B162A" stroke-width="4" opacity="0.95"></path>
-<path d="M714.9,213.8 A425,425 0 0 1 753.1,233.5" fill="none" stroke="#C4C1BA" stroke-width="4" opacity="1"></path>
-<path d="M753.1,233.5 A425,425 0 0 1 833.1,293.4" fill="none" stroke="#C4C1BA" stroke-width="4" opacity="1"></path>
-<path d="M833.1,293.4 A425,425 0 0 1 878.1,343.6" fill="none" stroke="#C4C1BA" stroke-width="4" opacity="1"></path>
-<path d="M878.1,343.6 A425,425 0 0 1 911,393.8" fill="none" stroke="#C4C1BA" stroke-width="4" opacity="1"></path>
-<path d="M911,393.8 A425,425 0 0 1 944.7,471.2" fill="none" stroke="#AA0000" stroke-width="4" opacity="0.95"></path>
-<path d="M944.7,471.2 A425,425 0 0 1 961.3,657.4" fill="none" stroke="#C4C1BA" stroke-width="4" opacity="1"></path>
-<path d="M961.3,657.4 A425,425 0 0 1 948.5,718.3" fill="none" stroke="#AA0000" stroke-width="4" opacity="0.95"></path>
-<path d="M948.5,718.3 A425,425 0 0 1 687.4,999.8" fill="none" stroke="#C4C1BA" stroke-width="4" opacity="1"></path>
-<path d="M687.4,999.8 A425,425 0 0 1 588.8,1023.3" fill="none" stroke="#AA0000" stroke-width="4" opacity="0.95"></path>
-<path d="M588.8,1023.3 A425,425 0 0 1 540,1026.2" fill="none" stroke="#AA0000" stroke-width="4" opacity="0.95"></path>
-<path d="M540,1026.2 A425,425 0 0 1 321.7,965.8" fill="none" stroke="#AA0000" stroke-width="4" opacity="0.95"></path>
-<path d="M321.7,965.8 A425,425 0 0 1 169,808.5" fill="none" stroke="#C4C1BA" stroke-width="4" opacity="1"></path>
-<path d="M169,808.5 A425,425 0 0 1 115,596.7" fill="none" stroke="#AA0000" stroke-width="4" opacity="0.95"></path>
-<path d="M115,596.7 A425,425 0 0 1 145.1,444" fill="none" stroke="#C4C1BA" stroke-width="4" opacity="1"></path>
-<path d="M145.1,444 A425,425 0 0 1 313.5,241.5" fill="none" stroke="#C4C1BA" stroke-width="4" opacity="1"></path>
-<path d="M313.5,241.5 A425,425 0 0 1 440.8,187.9" fill="none" stroke="#0B162A" stroke-width="4" opacity="0.95"></path>
-<path d="M440.8,187.9 A425,425 0 0 1 540,176.2" fill="none" stroke="#AA0000" stroke-width="4" opacity="0.95"></path>
-<path d="M541.1,163.2 A438,438 0 0 1 550.3,163.3" fill="none" stroke="#0B162A" stroke-width="9" pointer-events="none"></path>
-<path d="M552.6,163.3 A438,438 0 0 1 719.2,201.5" fill="none" stroke="#AA0000" stroke-width="9" pointer-events="none"></path>
-<path d="M721.3,202.4 A438,438 0 0 1 758.7,221.6" fill="none" stroke="#8E8B84" stroke-width="5" pointer-events="none"></path>
-<path d="M760.7,222.8 A438,438 0 0 1 841.2,283.2" fill="none" stroke="#8E8B84" stroke-width="5" pointer-events="none"></path>
-<path d="M842.9,284.8 A438,438 0 0 1 887.7,334.8" fill="none" stroke="#8E8B84" stroke-width="5" pointer-events="none"></path>
-<path d="M889.1,336.6 A438,438 0 0 1 921.8,386.5" fill="none" stroke="#AA0000" stroke-width="9" pointer-events="none"></path>
-<path d="M922.9,388.5 A438,438 0 0 1 956.7,466.2" fill="none" stroke="#0B162A" stroke-width="9" pointer-events="none"></path>
-<path d="M957.4,468.4 A438,438 0 0 1 974.3,657.9" fill="none" stroke="#AA0000" stroke-width="9" pointer-events="none"></path>
-<path d="M974,660.2 A438,438 0 0 1 961.3,720.8" fill="none" stroke="#0B162A" stroke-width="9" pointer-events="none"></path>
-<path d="M960.7,723 A438,438 0 0 1 693,1011.5" fill="none" stroke="#AA0000" stroke-width="9" pointer-events="none"></path>
-<path d="M690.9,1012.3 A438,438 0 0 1 591.5,1036.1" fill="none" stroke="#8E8B84" stroke-width="5" pointer-events="none"></path>
-<path d="M589.2,1036.4 A438,438 0 0 1 541.1,1039.2" fill="none" stroke="#8E8B84" stroke-width="5" pointer-events="none"></path>
-<path d="M538.9,1039.2 A438,438 0 0 1 316.1,977.6" fill="none" stroke="#0B162A" stroke-width="9" pointer-events="none"></path>
-<path d="M314.1,976.4 A438,438 0 0 1 158.2,815.8" fill="none" stroke="#AA0000" stroke-width="9" pointer-events="none"></path>
-<path d="M157.1,813.8 A438,438 0 0 1 102,597.7" fill="none" stroke="#0B162A" stroke-width="9" pointer-events="none"></path>
-<path d="M102,595.4 A438,438 0 0 1 132.6,440.3" fill="none" stroke="#8E8B84" stroke-width="5" pointer-events="none"></path>
-<path d="M133.5,438.1 A438,438 0 0 1 305.6,231.1" fill="none" stroke="#0B162A" stroke-width="9" pointer-events="none"></path>
-<path d="M307.6,229.9 A438,438 0 0 1 436.6,175.5" fill="none" stroke="#AA0000" stroke-width="9" pointer-events="none"></path>
-<path d="M438.9,175 A438,438 0 0 1 538.9,163.2" fill="none" stroke="#8E8B84" stroke-width="5" pointer-events="none"></path>
-<g transform="translate(540,601.1524346690887) rotate(-89.2)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#0B162A">Pick 6 7</text></g>
-<g transform="translate(540,601.1524346690887) rotate(-77.1)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#AA0000">TD 7</text></g>
-<g transform="translate(540,601.1524346690887) rotate(-62.8)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="22" font-weight="500" letter-spacing="0.3" fill="#3F3D38">Punt</text></g>
-<g transform="translate(540,601.1524346690887) rotate(-53.1)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="22" font-weight="500" letter-spacing="0.3" fill="#3F3D38">Punt</text></g>
-<g transform="translate(540,601.1524346690887) rotate(-41.8)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="22" font-weight="500" letter-spacing="0.3" fill="#3F3D38">Punt</text></g>
-<g transform="translate(540,601.1524346690887) rotate(-33.2)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#AA0000">TD 14</text></g>
-<g transform="translate(540,601.1524346690887) rotate(-23.5)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#0B162A">TD 14</text></g>
-<g transform="translate(540,601.1524346690887) rotate(-5.1)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#AA0000">TD 21</text></g>
-<g transform="translate(540,601.1524346690887) rotate(11.8)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#0B162A">TD 21</text></g>
-<g transform="translate(540,601.1524346690887) rotate(42.8)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#AA0000">TD 28</text></g>
-<g transform="translate(540,601.1524346690887) rotate(76.6)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="22" font-weight="500" letter-spacing="0.3" fill="#3F3D38">Punt</text></g>
-<g transform="translate(540,601.1524346690887) rotate(86.7)"><text x="450" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="22" font-weight="500" letter-spacing="0.3" fill="#3F3D38">Half</text></g>
-<g transform="translate(540,601.1524346690887) rotate(285.5)"><text x="-450" y="0" text-anchor="end" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#0B162A">TD 28</text></g>
-<g transform="translate(540,601.1524346690887) rotate(315.9)"><text x="-450" y="0" text-anchor="end" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#AA0000">TD 35</text></g>
-<g transform="translate(540,601.1524346690887) rotate(345.7)"><text x="-450" y="0" text-anchor="end" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#0B162A">TD 35</text></g>
-<g transform="translate(540,601.1524346690887) rotate(371.2)"><text x="-450" y="0" text-anchor="end" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="22" font-weight="500" letter-spacing="0.3" fill="#3F3D38">Punt</text></g>
-<g transform="translate(540,601.1524346690887) rotate(399.8)"><text x="-450" y="0" text-anchor="end" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#0B162A">FG 38</text></g>
-<g transform="translate(540,601.1524346690887) rotate(427.2)"><text x="-450" y="0" text-anchor="end" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="26" font-weight="600" letter-spacing="0.3" fill="#AA0000">TD 42</text></g>
-<g transform="translate(540,601.1524346690887) rotate(-65.9)" style="cursor: pointer;"><text x="397" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2" fill="#AA0000" stroke="#FBFAF6" stroke-width="2.4" paint-order="stroke">XP</text></g>
-<g transform="translate(540,601.1524346690887) rotate(-29.4)" style="cursor: pointer;"><text x="397" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2" fill="#AA0000" stroke="#FBFAF6" stroke-width="2.4" paint-order="stroke">XP</text></g>
-<g transform="translate(540,601.1524346690887) rotate(-18)" style="cursor: pointer;"><text x="397" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2" fill="#0B162A" stroke="#FBFAF6" stroke-width="2.4" paint-order="stroke">XP</text></g>
-<g transform="translate(540,601.1524346690887) rotate(7.3)" style="cursor: pointer;"><text x="397" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2" fill="#AA0000" stroke="#FBFAF6" stroke-width="2.4" paint-order="stroke">XP</text></g>
-<g transform="translate(540,601.1524346690887) rotate(15.8)" style="cursor: pointer;"><text x="397" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2" fill="#0B162A" stroke="#FBFAF6" stroke-width="2.4" paint-order="stroke">XP</text></g>
-<g transform="translate(540,601.1524346690887) rotate(69.4)" style="cursor: pointer;"><text x="397" y="0" text-anchor="start" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2" fill="#AA0000" stroke="#FBFAF6" stroke-width="2.4" paint-order="stroke">XP</text></g>
-<g transform="translate(540,601.1524346690887) rotate(300.7)" style="cursor: pointer;"><text x="-397" y="0" text-anchor="end" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2" fill="#0B162A" stroke="#FBFAF6" stroke-width="2.4" paint-order="stroke">XP</text></g>
-<g transform="translate(540,601.1524346690887) rotate(330.6)" style="cursor: pointer;"><text x="-397" y="0" text-anchor="end" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2" fill="#AA0000" stroke="#FBFAF6" stroke-width="2.4" paint-order="stroke">XP</text></g>
-<g transform="translate(540,601.1524346690887) rotate(360.4)" style="cursor: pointer;"><text x="-397" y="0" text-anchor="end" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2" fill="#0B162A" stroke="#FBFAF6" stroke-width="2.4" paint-order="stroke">XP</text></g>
-<g transform="translate(540,601.1524346690887) rotate(436.3)" style="cursor: pointer;"><text x="-397" y="0" text-anchor="end" dominant-baseline="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2" fill="#AA0000" stroke="#FBFAF6" stroke-width="2.4" paint-order="stroke">XP</text></g>
-<polyline points="541,507.1 543.5,467.9" fill="none" stroke="#AA0000" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
-<circle cx="541" cy="507.1" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<g style="cursor: pointer;"><circle cx="543.5" cy="467.9" r="9" fill="transparent"></circle><g stroke="#AA0000" stroke-width="2.4" stroke-linecap="round" pointer-events="none"><line x1="538" y1="462.4" x2="549" y2="473.4"></line><line x1="538" y1="473.4" x2="549" y2="462.4"></line></g></g>
-<line x1="543.5" y1="467.9" x2="540.2" y2="593.3" stroke="#0B162A" stroke-width="2" stroke-dasharray="5 4"></line>
-<polyline points="543.6,464 544.8,464 555.1,453 575.1,384.5 598.6,353.2 618.2,354.5 620.4,355.2 648.7,332.2 696.6,246.1 701.3,243.9" fill="none" stroke="#AA0000" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
-<circle cx="543.6" cy="464" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="544.8" cy="464" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="555.1" cy="453" r="3.8" fill="#AA0000"></circle>
-<circle cx="575.1" cy="384.5" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="598.6" cy="353.2" r="3.8" fill="#AA0000"></circle>
-<circle cx="618.2" cy="354.5" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="620.4" cy="355.2" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="648.7" cy="332.2" r="3.8" fill="#AA0000"></circle>
-<circle cx="696.6" cy="246.1" r="3.8" fill="#AA0000"></circle>
-<polyline points="587.7,498 606.3,476.6 607.1,477 609.1,478.1 610.8,479.1" fill="none" stroke="#0B162A" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
-<circle cx="587.7" cy="498" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="606.3" cy="476.6" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="607.1" cy="477" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="609.1" cy="478.1" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<polyline points="579.3,533.3 607.2,499.9 614.6,505.3 632.5,499.8 633.2,500.5 634.6,501.8" fill="none" stroke="#AA0000" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
-<circle cx="579.3" cy="533.3" r="3.8" fill="#AA0000"></circle>
-<circle cx="607.2" cy="499.9" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="614.6" cy="505.3" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="632.5" cy="499.8" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="633.2" cy="500.5" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<polyline points="583.3,555.7 592.2,553.7 607.2,547.1 607.6,547.6 608.6,548.9" fill="none" stroke="#0B162A" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
-<circle cx="583.3" cy="555.7" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="592.2" cy="553.7" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="607.2" cy="547.1" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="607.6" cy="547.6" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<g style="cursor: pointer;"><line x1="780.1" y1="418.2" x2="745.8" y2="444.4" stroke="transparent" stroke-width="12"></line><circle cx="780.1" cy="418.2" r="2" fill="none" stroke="#AA0000" stroke-width="1.1"></circle><line x1="780.1" y1="418.2" x2="745.8" y2="444.4" stroke="#AA0000" stroke-width="1.6" stroke-dasharray="4 3"></line></g>
-<polyline points="646,520.4 784.9,438.5 845.8,425.3 882.2,409.9" fill="none" stroke="#AA0000" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
-<circle cx="646" cy="520.4" r="3.8" fill="#AA0000"></circle>
-<circle cx="784.9" cy="438.5" r="3.8" fill="#AA0000"></circle>
-<circle cx="845.8" cy="425.3" r="3.8" fill="#AA0000"></circle>
-<polyline points="619.1,557.9 619.5,558.5 657.8,547.7 690.4,544.6 781.6,520.3 913.2,481.3" fill="none" stroke="#0B162A" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
-<circle cx="619.1" cy="557.9" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="619.5" cy="558.5" r="3.8" fill="#0B162A"></circle>
-<circle cx="657.8" cy="547.7" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<polygon points="695.6,542.7 688.8,550 685.6,541.6" fill="#D9A200" stroke="#8A6A00" stroke-width="0.7" stroke-linejoin="round"></polygon>
-<circle cx="781.6" cy="520.3" r="3.8" fill="#0B162A"></circle>
-<polyline points="633.3,571.2 633.5,571.8 749.8,551.6 779.5,559.8 784.5,566.4 801.8,580.5 798.7,601.2 849.2,618.4 909.5,647.2 928.6,653" fill="none" stroke="#AA0000" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
-<circle cx="633.3" cy="571.2" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="633.5" cy="571.8" r="3.8" fill="#AA0000"></circle>
-<circle cx="749.8" cy="551.6" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="779.5" cy="559.8" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="784.5" cy="566.4" r="3.8" fill="#AA0000"></circle>
-<circle cx="801.8" cy="580.5" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="798.7" cy="601.2" r="3.8" fill="#AA0000"></circle>
-<circle cx="849.2" cy="618.4" r="3.8" fill="#AA0000"></circle>
-<circle cx="909.5" cy="647.2" r="3.8" fill="#AA0000"></circle>
-<polyline points="676,619.3 744,640.4 782.1,666.9 916.8,709.2" fill="none" stroke="#0B162A" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
-<circle cx="676" cy="619.3" r="3.8" fill="#0B162A"></circle>
-<circle cx="744" cy="640.4" r="3.8" fill="#0B162A"></circle>
-<circle cx="782.1" cy="666.9" r="3.8" fill="#0B162A"></circle>
-<polyline points="645.1,632.7 657.6,644.9 690.4,668.1 695.9,683.7 723,715.1 691.6,712.5 724,760 722.6,761.6 751,811.4 745.7,837.8 738.6,863.8 736.4,899 712.3,904.5 700.4,928.5 701.9,945.2 674.4,956.8 676,968.8" fill="none" stroke="#AA0000" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
-<circle cx="645.1" cy="632.7" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="657.6" cy="644.9" r="3.8" fill="#AA0000"></circle>
-<circle cx="690.4" cy="668.1" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="695.9" cy="683.7" r="3.8" fill="#AA0000"></circle>
-<circle cx="723" cy="715.1" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="691.6" cy="712.5" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="724" cy="760" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="722.6" cy="761.6" r="3.8" fill="#AA0000"></circle>
-<circle cx="751" cy="811.4" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="745.7" cy="837.8" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="738.6" cy="863.8" r="3.8" fill="#AA0000"></circle>
-<circle cx="736.4" cy="899" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="712.3" cy="904.5" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<polygon points="702.8,933.5 694.8,927.4 702.9,923.4" fill="#D9A200" stroke="#8A6A00" stroke-width="0.7" stroke-linejoin="round"></polygon>
-<circle cx="701.9" cy="945.2" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="674.4" cy="956.8" r="3.8" fill="#AA0000"></circle>
-<polyline points="566.6,674.9 563.6,684.1 565.3,720 560.4,732.9 558.8,733.1 557.4,733.3 555.3,733.5" fill="none" stroke="#0B162A" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
-<circle cx="566.6" cy="674.9" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="563.6" cy="684.1" r="3.8" fill="#0B162A"></circle>
-<circle cx="565.3" cy="720" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="560.4" cy="732.9" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="558.8" cy="733.1" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="557.4" cy="733.3" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<polyline points="544.1,636.2 544.3,644.1 546,667.5 545.1,687.2 543.5,706.9 542.7,730.5 540,797.2" fill="none" stroke="#AA0000" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
-<circle cx="544.1" cy="636.2" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="544.3" cy="644.1" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="546" cy="667.5" r="3.8" fill="#AA0000"></circle>
-<circle cx="545.1" cy="687.2" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="543.5" cy="706.9" r="3.8" fill="#AA0000"></circle>
-<circle cx="542.7" cy="730.5" r="3.8" fill="#AA0000"></circle>
-<polyline points="540,738.4 528.4,781.1 515.4,807.5 497.8,824.6 485.4,813.8 473.2,802 431.4,865.9 372.1,942.3 346.8,933.2 345,932.2 338.7,937.5" fill="none" stroke="#0B162A" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
-<circle cx="540" cy="738.4" r="3.8" fill="#0B162A"></circle>
-<circle cx="528.4" cy="781.1" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="515.4" cy="807.5" r="3.8" fill="#0B162A"></circle>
-<circle cx="497.8" cy="824.6" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="485.4" cy="813.8" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="473.2" cy="802" r="3.8" fill="#0B162A"></circle>
-<circle cx="431.4" cy="865.9" r="3.8" fill="#0B162A"></circle>
-<circle cx="372.1" cy="942.3" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="346.8" cy="933.2" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="345" cy="932.2" r="3.8" fill="#0B162A"></circle>
-<polyline points="469.5,718.9 406.4,794.8 387.3,800.2 358.2,806.7 326.5,820 295.9,816.3 272.7,819.2 258.1,800 221.2,785.9 197.8,792.4" fill="none" stroke="#AA0000" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
-<circle cx="469.5" cy="718.9" r="3.8" fill="#AA0000"></circle>
-<circle cx="406.4" cy="794.8" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="387.3" cy="800.2" r="3.8" fill="#AA0000"></circle>
-<circle cx="358.2" cy="806.7" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="326.5" cy="820" r="3.8" fill="#AA0000"></circle>
-<polygon points="291.8,820 295.6,810.6 301.5,817.4" fill="#D9A200" stroke="#8A6A00" stroke-width="0.7" stroke-linejoin="round"></polygon>
-<circle cx="272.7" cy="819.2" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="258.1" cy="800" r="3.8" fill="#AA0000"></circle>
-<circle cx="221.2" cy="785.9" r="3.8" fill="#AA0000"></circle>
-<polyline points="471.2,638.8 451.6,643.5 412.7,652.3 402.5,647.2 402.2,646.5 298,667.4 302.1,650.9 256.8,642.5 294.5,628.3 269.6,608.7 234.2,601.2 148,597" fill="none" stroke="#0B162A" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
-<circle cx="471.2" cy="638.8" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="451.6" cy="643.5" r="3.8" fill="#0B162A"></circle>
-<circle cx="412.7" cy="652.3" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="402.5" cy="647.2" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="402.2" cy="646.5" r="3.8" fill="#0B162A"></circle>
-<circle cx="298" cy="667.4" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="302.1" cy="650.9" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<polygon points="262.3,641.7 252.7,638.5 254,647.4" fill="#D9A200" stroke="#8A6A00" stroke-width="0.7" stroke-linejoin="round"></polygon>
-<circle cx="294.5" cy="628.3" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="269.6" cy="608.7" r="3.8" fill="#0B162A"></circle>
-<circle cx="234.2" cy="601.2" r="3.8" fill="#0B162A"></circle>
-<polyline points="418.5,598.6 387.6,588.6 427.2,586.9 409.3,575 336.4,543.2 336.9,541.4 331,522.2 331.4,521.1 332.4,518.5" fill="none" stroke="#AA0000" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
-<circle cx="418.5" cy="598.6" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<polygon points="393.1,589.1 384.5,583.9 383.8,592.8" fill="#D9A200" stroke="#8A6A00" stroke-width="0.7" stroke-linejoin="round"></polygon>
-<circle cx="427.2" cy="586.9" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="409.3" cy="575" r="3.8" fill="#AA0000"></circle>
-<circle cx="336.4" cy="543.2" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="336.9" cy="541.4" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="331" cy="522.2" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="331.4" cy="521.1" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<polyline points="499.9,585.2 413.1,539.5 407.3,525.2 393.6,502.8 391.3,485.8 308.8,389.3 323.2,402.5 327.2,376.1 307.6,335.7 320.5,315 349,309.2 352,307.2 354.1,305.9" fill="none" stroke="#0B162A" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
-<circle cx="499.9" cy="585.2" r="3.8" fill="#0B162A"></circle>
-<circle cx="413.1" cy="539.5" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="407.3" cy="525.2" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="393.6" cy="502.8" r="3.8" fill="#0B162A"></circle>
-<circle cx="391.3" cy="485.8" r="3.8" fill="#0B162A"></circle>
-<polygon points="312.8,393 309.2,383.6 303.2,390.2" fill="#D9A200" stroke="#8A6A00" stroke-width="0.7" stroke-linejoin="round"></polygon>
-<circle cx="323.2" cy="402.5" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<polygon points="323.4,372.2 332.9,375.6 326.4,381.8" fill="#D9A200" stroke="#8A6A00" stroke-width="0.7" stroke-linejoin="round"></polygon>
-<circle cx="307.6" cy="335.7" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="320.5" cy="315" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="349" cy="309.2" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="352" cy="307.2" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<rect x="350.1" y="301.9" width="8" height="8" fill="#0B162A" transform="rotate(45 354.1 305.9)" pointer-events="none"></rect>
-<polyline points="488.5,517.8 487.2,500.5 488,500 483.3,471.9 488.2,457.3 482.7,438.5 463.3,370.5 480,365.6 448.5,220" fill="none" stroke="#AA0000" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
-<circle cx="488.5" cy="517.8" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="487.2" cy="500.5" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="488" cy="500" r="3.8" fill="#AA0000"></circle>
-<circle cx="483.3" cy="471.9" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<polygon points="486.4,452.1 493.6,459.1 485.2,462.1" fill="#D9A200" stroke="#8A6A00" stroke-width="0.7" stroke-linejoin="round"></polygon>
-<circle cx="482.7" cy="438.5" r="3.8" fill="#AA0000"></circle>
-<circle cx="463.3" cy="370.5" r="3.4" fill="#fff" stroke="#AA0000" stroke-width="1.5"></circle>
-<circle cx="480" cy="365.6" r="3.8" fill="#AA0000"></circle>
-<polyline points="508,467.7 507.4,447.8 504.8,428.3 506,428.1 510.8,403.4 511.1,387.5 512.6,387.3 514.1,387.1 518.8,331.5 519.8,311.8 521.8,311.6 523.3,311.6 524.5,260.5 527.5,260.3 536.6,217 537.3,217 540,217" fill="none" stroke="#0B162A" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"></polyline>
-<circle cx="508" cy="467.7" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<polygon points="506.3,442.4 512.5,450.3 503.7,452.1" fill="#D9A200" stroke="#8A6A00" stroke-width="0.7" stroke-linejoin="round"></polygon>
-<circle cx="504.8" cy="428.3" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="506" cy="428.1" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="510.8" cy="403.4" r="3.8" fill="#0B162A"></circle>
-<circle cx="511.1" cy="387.5" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="512.6" cy="387.3" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="514.1" cy="387.1" r="3.8" fill="#0B162A"></circle>
-<circle cx="518.8" cy="331.5" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="519.8" cy="311.8" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="521.8" cy="311.6" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="523.3" cy="311.6" r="3.8" fill="#0B162A"></circle>
-<circle cx="524.5" cy="260.5" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="527.5" cy="260.3" r="3.8" fill="#0B162A"></circle>
-<circle cx="536.6" cy="217" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="537.3" cy="217" r="3.4" fill="#fff" stroke="#0B162A" stroke-width="1.5"></circle>
-<circle cx="540" cy="601.1524346690887" r="2.2" fill="#2B323C"></circle>
-</svg></div>
-    <p class="caption">Chicago at San Francisco, Week 17, 2025. Every drive of the game, in order, around the clock.</p>
-  </section>
-
-  <div class="cards">
-    <div class="card">
-      <p class="eyebrow">Around</p>
-      <h2>Time is the angle</h2>
-      <p>Kickoff is at twelve. The game runs clockwise, a full turn for sixty minutes, so halftime lands at the bottom. A wide wedge is a long drive; a narrow one went three and out.</p>
-    </div>
-    <div class="card">
-      <p class="eyebrow">Outward</p>
-      <h2>Distance is the field</h2>
-      <p>The center is the offense's own goal line and the rim is the end zone they are attacking. Each dot is a snap, and the line traces the drive working its way out. The heavier ring halfway out is the fifty.</p>
-    </div>
-    <div class="card">
-      <p class="eyebrow">At the edge</p>
-      <h2>The rim is the outcome</h2>
-      <p>Every drive ends on a band at the rim, thick and colored if it scored and thin grey if it didn't, labeled with the result and the new score. The ring just inside shows who was ahead at that moment.</p>
-    </div>
-  </div>
-
-  <section>
-    <p class="eyebrow">The marks</p>
-    <h2 style="margin-bottom:22px">What each shape means</h2>
-    <ul class="keys">
-      <li><svg width="26" height="14"><circle cx="13" cy="7" r="4.4" fill="#C3CEC8"/></svg><span><b>A first down.</b> Solid dots moved the chains.</span></li>
-      <li><svg width="26" height="14"><circle cx="13" cy="7" r="4" fill="none" stroke="#C3CEC8" stroke-width="1.8"/></svg><span><b>Any other snap.</b> Hollow dots did not.</span></li>
-      <li><svg width="26" height="14"><polygon points="18,7 9,12 9,2" fill="#F5C518" stroke="#8A6A00" stroke-width="0.8"/></svg><span><b>A penalty.</b> The triangle points at the team the flag was on.</span></li>
-      <li><svg width="26" height="14"><g stroke="#C3CEC8" stroke-width="2.4" stroke-linecap="round"><line x1="8" y1="2" x2="18" y2="12"/><line x1="8" y1="12" x2="18" y2="2"/></g></svg><span><b>A turnover,</b> at the spot it happened.</span></li>
-      <li><svg width="26" height="14"><line x1="1" y1="7" x2="25" y2="7" stroke="#C3CEC8" stroke-width="2" stroke-dasharray="4 3"/></svg><span><b>A return</b> by the other team, in their color.</span></li>
-      <li><svg width="26" height="14"><rect x="9" y="3" width="8" height="8" fill="#C3CEC8" transform="rotate(45 13 7)"/></svg><span><b>A field goal attempt,</b> at the spot of the kick.</span></li>
-      <li><svg width="26" height="14"><path d="M1,12 A16,16 0 0,1 25,12" fill="none" stroke="#C3CEC8" stroke-width="5.5"/></svg><span><b>A scoring drive,</b> in the scoring team's color.</span></li>
-      <li><svg width="26" height="14"><path d="M1,12 A16,16 0 0,1 25,12" fill="none" stroke="#7C8A83" stroke-width="2.8"/></svg><span><b>A drive that didn't score.</b></span></li>
-      <li><svg width="26" height="14"><text x="13" y="11" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="10" font-weight="600" fill="#C3CEC8">XP</text></svg><span><b>The try after a touchdown</b> — XP or 2PT, grey if it missed.</span></li>
-      <li><svg width="26" height="14"><line x1="13" y1="0" x2="13" y2="14" stroke="#C3CEC8" stroke-width="1.8"/></svg><span><b>The vertical line</b> splits the halves: kickoff at the top, halftime at the bottom.</span></li>
-    </ul>
-    <p style="color:var(--chalk-faint);font-size:.94rem;max-width:60ch">On the live wheels, hovering a wedge gives you the drive and clicking any mark gives you the play it came from.</p>
-  </section>
-
-  <section>
-    <p class="eyebrow">Below the wheel</p>
-    <h2>Score, and overtime</h2>
-    <p style="color:var(--chalk-dim);max-width:62ch;margin-top:12px">Under each wheel is the running score through regulation, lined up so its halftime matches the wheel's. If the game went to overtime, a straight field follows: the yard lines run across, the clock runs down, and the two teams attack opposite ends the way a traditional drive chart shows it.</p>
-  </section>
-
-  <div class="end">
-    <h2>Every NFL game, 2025 on.</h2>
-    <p>Pick a team, a week, a game.</p>
-    <a class="big" href="https://nfl.drivewheel.football">Open the wheels</a>
-  </div>
-
-  <div class="foot">
-    <span>Data: nflverse</span>
-    <span class="rights">© 2026 Eric Mineart</span>
-  </div>
+  <div class="card"><div class="hud" id="hud"></div><div class="fit" id="fit"><div class="loading">Loading season data…</div></div></div>
 </div>
+<div class="foot"><a href="https://drivewheel.football" class="how">How to read the Drive Wheel</a><span>Data: <a href="https://github.com/nflverse/nflverse-data" class="how">nflverse</a></span><span class="rights">© 2026 Eric Mineart</span></div>
+</div>
+<div class="tip" id="tip"></div>
+<div class="toast" id="toast"></div>
+<script>
+(async function () {
+  "use strict";
+  // ---------- data: a light manifest for the pickers, team colors, and the logo sprite load up
+  // front; each game's play-by-play is fetched only when that game is actually opened, and
+  // cached in memory so flipping with prev/next or the picker doesn't refetch. -----------------
+  let GAMES, TEAMS;
+  try {
+    const [manifest, teams] = await Promise.all([
+      fetch('games/manifest.json').then(r => r.json()),
+      fetch('teams.json').then(r => r.json())
+    ]);
+    GAMES = manifest; TEAMS = teams;
+  } catch (e) {
+    document.getElementById('fit').innerHTML = '<div class="loading">Couldn\'t load season data (' + String(e.message).replace(/</g, '') + ').</div>';
+    return;
+  }
+  const fullCache = new Map();                                  // id -> full per-game record with drives, once fetched
+  async function getFull(id) {
+    if (fullCache.has(id)) return fullCache.get(id);
+    const g = await fetch(`games/${id}.json`).then(r => r.json());
+    fullCache.set(id, g);
+    return g;
+  }
+
+  // ---------- colors: nflverse palettes with a vividness-and-contrast rule ----------
+  function lab(hex) {
+    let r = parseInt(hex.slice(1, 3), 16) / 255, g = parseInt(hex.slice(3, 5), 16) / 255, b = parseInt(hex.slice(5, 7), 16) / 255;
+    const lin = c => c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+    r = lin(r); g = lin(g); b = lin(b);
+    let x = (r * 0.4124 + g * 0.3576 + b * 0.1805) / 0.95047, y = r * 0.2126 + g * 0.7152 + b * 0.0722, z = (r * 0.0193 + g * 0.1192 + b * 0.9505) / 1.08883;
+    const f = t => t > 0.008856 ? Math.cbrt(t) : 7.787 * t + 16 / 116;
+    x = f(x); y = f(y); z = f(z);
+    return [116 * y - 16, 500 * (x - y), 200 * (y - z)];
+  }
+  const dE = (a, b) => { const p = lab(a), q = lab(b); return Math.hypot(p[0] - q[0], p[1] - q[1], p[2] - q[2]); };
+  const chroma = c => { const l = lab(c); return Math.hypot(l[1], l[2]); };
+  function onDark(hex) {                                        // same hue, lightened to read on the tooltip
+    let c = hex;
+    for (let i = 0; i < 24 && lab(c)[0] < 66; i++) {
+      const r = parseInt(c.slice(1, 3), 16), g = parseInt(c.slice(3, 5), 16), b = parseInt(c.slice(5, 7), 16);
+      const mix = v => Math.round(v + (255 - v) * 0.12).toString(16).padStart(2, '0');
+      c = '#' + mix(r) + mix(g) + mix(b);
+    }
+    return c;
+  }
+  function toHsl(hex) {
+    const r = parseInt(hex.slice(1, 3), 16) / 255, g = parseInt(hex.slice(3, 5), 16) / 255, b = parseInt(hex.slice(5, 7), 16) / 255;
+    const mx = Math.max(r, g, b), mn = Math.min(r, g, b), l = (mx + mn) / 2;
+    if (mx === mn) return [0, 0, l];
+    const dd = mx - mn, sat = l > 0.5 ? dd / (2 - mx - mn) : dd / (mx + mn);
+    let h = mx === r ? (g - b) / dd + (g < b ? 6 : 0) : mx === g ? (b - r) / dd + 2 : (r - g) / dd + 4;
+    return [h / 6, sat, l];
+  }
+  function fromHsl(h, s, l) {
+    if (!s) { const v = Math.round(l * 255).toString(16).padStart(2, '0'); return ('#' + v + v + v).toUpperCase(); }
+    const q = l < 0.5 ? l * (1 + s) : l + s - l * s, p = 2 * l - q;
+    const hue = t => { t = (t + 1) % 1; return t < 1/6 ? p + (q - p) * 6 * t : t < 1/2 ? q : t < 2/3 ? p + (q - p) * (2/3 - t) * 6 : p; };
+    const to = v => Math.round(v * 255).toString(16).padStart(2, '0');
+    return ('#' + to(hue(h + 1/3)) + to(hue(h)) + to(hue(h - 1/3))).toUpperCase();
+  }
+  // Very dark team colors read as mud on paper. Lift lightness a little, keep the hue.
+  // Neutrals are left alone: black is a signature, not a muddy red.
+  function punch(hex) {
+    const [h, s, l] = toHsl(hex);
+    if (s <= 0.18 || l >= 0.24) return hex.toUpperCase();
+    return fromHsl(h, Math.min(1, s * 1.06), 0.26);
+  }
+  const OVERRIDES = {};                                          // e.g. 'PHI@DAL': { home: '#B0B7BC', away: '#004C54' }
+  function pickColors(home, away) {
+    const fixed = OVERRIDES[`${home}@${away}`];
+    if (fixed) return { home: fixed.home, away: fixed.away, swapped: [] };
+    const usable = t => {
+      const out = [];
+      (TEAMS[t] ? TEAMS[t].colors : ['#333333']).forEach((raw, i) => {
+        const c = raw.toUpperCase();
+        if (lab(c)[0] > 82) return;                              // too pale for paper
+        const p = punch(c);
+        if (!out.some(o => o.c === p)) out.push({ c: p, i, neutral: chroma(c) < 14 });
+      });
+      return out.length ? out : [{ c: '#333333', i: 0, neutral: true }];
+    };
+    const H = usable(home), A = usable(away);
+    let best = null;
+    for (const h of H) for (const a of A) {
+      if (h.neutral && a.neutral) continue;                      // two neutrals never read as two teams
+      const d = dE(h.c, a.c);
+      if (d < 56) continue;
+      const lh = lab(h.c), la = lab(a.c);
+      let hueGap = Math.abs(Math.atan2(lh[2], lh[1]) - Math.atan2(la[2], la[1])) * 57.2958;
+      if (hueGap > 180) hueGap = 360 - hueGap;
+      // Lab distance alone lets two dark blues through; demand a real lightness or hue difference
+      if (!h.neutral && !a.neutral && Math.abs(lh[0] - la[0]) < 22 && hueGap < 60) continue;
+      let score = Math.min(d, 95) + 0.15 * (chroma(h.c) + chroma(a.c));
+      if (h.i === 0) score += 48;                                // the home team keeps its primary where it can
+      if (a.i === 0) score += 32;
+      if (h.neutral && h.i === 0) score += 22;                    // signature black counts double
+      if (a.neutral && a.i === 0) score += 22;
+      if (!best || score > best.score) best = { score, home: h.c, away: a.c, hi: h.i, ai: a.i };
+    }
+    if (!best) {                                                 // nothing clears the bar: most distant pair wins
+      for (const h of H) for (const a of A) {
+        const d = dE(h.c, a.c);
+        if (!best || d > best.score) best = { score: d, home: h.c, away: a.c, hi: h.i, ai: a.i };
+      }
+    }
+    const swapped = [];
+    if (best.hi !== 0) swapped.push(home);
+    if (best.ai !== 0) swapped.push(away);
+    return { home: best.home, away: best.away, swapped };
+  }
+
+  // ---------- geometry (Drive Wheel proportions) ----------
+  const W = 1140, CX = 570, R_IN = 0, R_OUT = 392;
+  let CY = 560;
+  const R_TICK = R_OUT + 5, R_TMIN = R_OUT + 14, R_TMAJ = R_OUT + 22, R_LEAD = R_OUT + 33, R_ARC = R_OUT + 46, R_LABEL = R_OUT + 58;
+  const INK = '#2B323C', PAPER = '#FBFAF6', FLAG = '#D9A200', LBL = '#3F3D38';
+  const MUTE = '#4A4741', RULE = '#B8B5AE', GRID = '#D2CFC8', BAND = '#8E8B84';
+  const FONT_D = "'IBM Plex Sans',system-ui,sans-serif", FONT_M = "'IBM Plex Mono',ui-monospace,monospace";
+  const f1 = n => (Math.round(n * 10) / 10).toString();
+  const polar = (deg, r) => { const a = (deg - 90) * Math.PI / 180; return [CX + r * Math.cos(a), CY + r * Math.sin(a)]; };
+  const radiusFor = frac => R_IN + Math.max(0, Math.min(1, frac)) * (R_OUT - R_IN);
+  const deg = e => e / 10;
+  function arcPath(a0, a1, r) { const [x0, y0] = polar(a0, r), [x1, y1] = polar(a1, r); return `M${f1(x0)},${f1(y0)} A${r},${r} 0 ${a1 - a0 > 180 ? 1 : 0} 1 ${f1(x1)},${f1(y1)}`; }
+  function wedgePath(a0, a1, r1) {
+    const [x0, y0] = polar(a0, r1), [x1, y1] = polar(a1, r1), b = a1 - a0 > 180 ? 1 : 0;
+    return `M${CX},${CY} L${f1(x0)},${f1(y0)} A${r1},${r1} 0 ${b} 1 ${f1(x1)},${f1(y1)} Z`;
+  }
+  const regScore = (g, k) => { let v = 0; for (const d of g.drives) { if (d.a0 >= 3600) break; v = d.sc[k]; } return v; };
+  const mmss = s => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+  const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+
+  // Labels stay on their drive's own axis. When two would overlap, the older one steps
+  // outward along its axis and the most recent keeps the spot next to the rim.
+  function layoutLabels(items) {                                 // {id, angle, len} in clock order
+    const TXT = 29, out = items.map(it => Object.assign({ r0: R_LABEL }, it));
+    const clash = (a, b) => {
+      if (a.r0 + a.len < b.r0 || b.r0 + b.len < a.r0) return false;
+      const r = Math.max(a.r0, b.r0), t = TXT / r * 57.3;
+      return Math.abs(a.angle - b.angle) < t + 0.8;
+    };
+    let changed = true, guard = 0;
+    while (changed && guard++ < 400) {
+      changed = false;
+      for (let i = 1; i < out.length; i++) for (let j = 0; j < i; j++)
+        if (clash(out[i], out[j])) { out[j].r0 = Math.max(out[j].r0, out[i].r0 + out[i].len + 10); changed = true; }
+    }
+    return out;
+  }
+  const labelItems = (reg, away) => {
+    const items = [];
+    reg.forEach((d, i) => {
+      if (!d.w || d.w === 'Final') return;
+      const total = d.sb ? (d.sb === away ? d.sc[0] : d.sc[1]) : null;
+      const txt = d.sb ? `${d.w} ${total}` : d.w;
+      items.push({ id: i, angle: (deg(d.a0) + deg(d.a1)) / 2, len: txt.length * (d.sb ? 12.4 : 10.4) + 6, txt });
+    });
+    return layoutLabels(items);
+  };
+
+  // ---------- render ----------
+  const fit = document.getElementById('fit'), tip = document.getElementById('tip'), toast = document.getElementById('toast');
+  // Default fits the whole wheel in the viewport; the buttons let you push past that when you
+  // want to read the detail rather than take in the shape.
+  let zoom = 1, fitRatio = 1;
+  const applyZoom = () => { fit.style.maxWidth = `calc((100vh - 76px) * ${(fitRatio * zoom).toFixed(4)})`; };
+  const setZoom = z => { zoom = Math.max(0.7, Math.min(2.2, z)); applyZoom(); };
+  let current = null;
+
+  function render(game) {
+    const home = game.home, away = game.away, col = pickColors(home, away);
+    const C = { [home]: col.home, [away]: col.away };
+    const opp = t => t === home ? away : home;
+    const reg = game.drives.filter(d => d.h < 3), ot = game.drives.filter(d => d.h === 3);
+    const otLen = game.ot ? Math.max(game.otlen, Math.ceil(Math.max(...ot.map(d => d.a1))) - 3600) : 0;
+
+    // measure label reach near the seams, so the header stays clear and the leaders stay short
+    CY = 0;
+    const laid = labelItems(reg, away);
+    let topReach = R_LABEL + 8, botReach = R_LABEL + 8, topNear = R_ARC + 8, botNear = R_ARC + 8;
+    laid.forEach(L => {
+      const ext = (L.r0 + L.len) * Math.abs(Math.cos(L.angle * Math.PI / 180));
+      if (L.angle < 35 || L.angle > 325) topReach = Math.max(topReach, ext);
+      if (L.angle > 145 && L.angle < 215) botReach = Math.max(botReach, ext);
+      if (L.angle < 12 || L.angle > 348) topNear = Math.max(topNear, L.r0 + L.len);
+      if (L.angle > 168 && L.angle < 192) botNear = Math.max(botNear, L.r0 + L.len);
+    });
+    // The corner blocks live in HTML over the canvas corners, which the circle leaves empty,
+    // so the wheel no longer has to make vertical room for them.
+    const kickReserve = Math.max(topNear + 26, R_LABEL + 40);    // KICKOFF never crowds the rim
+    CY = Math.max(topReach + 14, kickReserve + 34);
+    const kY = CY - kickReserve;
+    const halfY = CY + Math.max(botReach, botNear + 12) + 26;
+    const wheelH = halfY + 14;
+
+    const o = [], w = s => o.push(s);
+    w(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${wheelH}">`);
+    w(`<rect x="0" y="0" width="${W}" height="${wheelH}" fill="${PAPER}"/>`);
+
+    // kickoff / halftime: set in the display face at full width, with the kicking team named
+    w(`<text x="${CX}" y="${kY}" text-anchor="middle" font-family="${FONT_D}" font-size="21" font-weight="600" letter-spacing="1.6" fill="${MUTE}">KICKOFF</text>`);
+    w(`<polygon points="${CX + 78},${kY - 14} ${CX + 91},${kY - 6} ${CX + 78},${kY + 2}" fill="${C[game.k1]}"/>`);
+    w(`<text x="${CX}" y="${halfY - 3}" text-anchor="middle" font-family="${FONT_D}" font-size="21" font-weight="600" letter-spacing="1.6" fill="${MUTE}">HALFTIME</text>`);
+    w(`<polygon points="${CX - 78},${halfY - 17} ${CX - 91},${halfY - 9} ${CX - 78},${halfY - 1}" fill="${C[game.k2]}"/>`);
+
+    // field
+    w(`<circle cx="${CX}" cy="${CY}" r="${R_OUT}" fill="#fff" stroke="#CBC8C1" stroke-width="1"/>`);
+    reg.forEach(d => w(`<path class="wedge" data-i="${game.drives.indexOf(d)}" d="${wedgePath(deg(d.a0), deg(d.a1), R_OUT)}" fill="${C[d.t]}" fill-opacity="0.13" stroke="${PAPER}" stroke-width="1"/>`));
+    for (let yd = 10; yd < 100; yd += 10) w(`<circle cx="${CX}" cy="${CY}" r="${f1(radiusFor(yd / 100))}" fill="none" stroke="${yd === 50 ? INK : '#CFCCC5'}" stroke-width="${yd === 50 ? 1.3 : 1}" pointer-events="none"/>`);
+    for (let s = 0; s < 3600; s += 60) {
+      const inQ = s % 900, kind = inQ === 0 ? 'q' : (inQ % 300 === 0 ? 'maj' : 'min'), r1 = kind === 'q' ? R_TMAJ + 4 : kind === 'maj' ? R_TMAJ : R_TMIN;
+      const [x0, y0] = polar(deg(s), R_TICK), [x1, y1] = polar(deg(s), r1);
+      w(`<line x1="${f1(x0)}" y1="${f1(y0)}" x2="${f1(x1)}" y2="${f1(y1)}" stroke="${kind === 'min' ? RULE : INK}" stroke-width="${kind === 'min' ? 1.2 : 2}"/>`);
+    }
+    [0, 900, 1800, 2700].forEach(s => {
+      const [x1, y1] = polar(deg(s), R_OUT), solid = s === 0 || s === 1800;
+      w(`<line x1="${CX}" y1="${CY}" x2="${f1(x1)}" y2="${f1(y1)}" stroke="${INK}" stroke-width="${s === 1800 ? 1.3 : 0.9}" ${solid ? '' : 'stroke-dasharray="3 4" opacity="0.55"'} pointer-events="none"/>`);
+    });
+    w(`<line x1="${CX}" y1="${kY + 12}" x2="${CX}" y2="${CY - R_OUT}" stroke="${INK}" stroke-width="1.6"/>`);
+    w(`<line x1="${CX}" y1="${CY + R_OUT}" x2="${CX}" y2="${halfY - 26}" stroke="${INK}" stroke-width="1.6"/>`);
+
+    // lead ring
+    let pAt = 0, pA = 0, pH = 0;
+    const leadSeg = (a0, a1) => { const side = pH > pA ? home : pA > pH ? away : null; if (a1 - a0 > 0.05) w(`<path d="${arcPath(a0, a1, R_LEAD)}" fill="none" stroke="${side ? C[side] : '#C4C1BA'}" stroke-width="4" opacity="${side ? 0.95 : 1}"/>`); };
+    reg.forEach(d => { leadSeg(deg(pAt), deg(d.a1)); pAt = d.a1; pA = d.sc[0]; pH = d.sc[1]; });
+    leadSeg(deg(pAt), 360);
+
+    // result bands and labels (with a leader when a label had to step outward)
+    reg.forEach(d => {
+      const a0 = deg(d.a0) + 0.15, a1 = deg(d.a1) - 0.15;
+      w(`<path d="${arcPath(a0, a1, R_ARC)}" fill="none" stroke="${d.sb ? C[d.sb] : BAND}" stroke-width="${d.sb ? 9 : 5}" pointer-events="none"/>`);
+    });
+    laid.forEach(L => {
+      const d = reg[L.id], flip = L.angle > 180;
+      if (L.r0 > R_LABEL + 1) {
+        const [x0, y0] = polar(L.angle, R_ARC + 6), [x1, y1] = polar(L.angle, L.r0 - 5);
+        w(`<line x1="${f1(x0)}" y1="${f1(y0)}" x2="${f1(x1)}" y2="${f1(y1)}" stroke="#A9A69F" stroke-width="1.1"/>`);
+      }
+      w(`<g transform="translate(${CX},${CY}) rotate(${f1(flip ? L.angle + 90 : L.angle - 90)})"><text x="${flip ? -L.r0 : L.r0}" y="0" text-anchor="${flip ? 'end' : 'start'}" dominant-baseline="middle" font-family="${FONT_D}" font-size="${d.sb ? 26 : 22}" font-weight="${d.sb ? 600 : 500}" letter-spacing="0.3" fill="${d.sb ? C[d.sb] : LBL}">${esc(L.txt)}</text></g>`);
+    });
+
+    // A drive that began by taking the ball on the kickoff — a fumbled return or a recovered
+    // onside kick. Without this the wheel just shows two drives in a row for one team.
+    reg.forEach(d => {
+      if (!d.kr) return;
+      // sit a little way into the drive: the previous drive's try marker owns the boundary
+      const ang = Math.min(deg(d.a0) + 2.2, (deg(d.a0) + deg(d.a1)) / 2), flip = ang > 180;
+      w(`<g class="kick" data-i="${game.drives.indexOf(d)}" transform="translate(${CX},${CY}) rotate(${f1(flip ? ang + 90 : ang - 90)})"><text x="${flip ? -(R_OUT + 5) : R_OUT + 5}" y="0" text-anchor="${flip ? 'end' : 'start'}" dominant-baseline="middle" font-family="${FONT_D}" font-size="10" font-weight="600" letter-spacing="0.2" fill="${C[d.t]}" stroke="${PAPER}" stroke-width="2.4" paint-order="stroke">${d.kr.on ? 'ONSIDE' : 'REC'}</text></g>`);
+    });
+
+    // The try after a touchdown: XP or 2PT set radially in the tick gutter, in the scoring team's
+    // color when it was good and grey when it wasn't. Clickable, since it is a real play.
+    reg.forEach(d => {
+      if (!d.xt) return;
+      const ang = deg(d.a1) - 0.25, flip = ang > 180, fill = d.xt.ok ? C[d.t] : '#9A978F';
+      w(`<g class="try" data-i="${game.drives.indexOf(d)}" transform="translate(${CX},${CY}) rotate(${f1(flip ? ang + 90 : ang - 90)})"><text x="${flip ? -(R_OUT + 5) : R_OUT + 5}" y="0" text-anchor="${flip ? 'end' : 'start'}" dominant-baseline="middle" font-family="${FONT_D}" font-size="12" font-weight="600" letter-spacing="0.2" fill="${fill}" stroke="${PAPER}" stroke-width="2.4" paint-order="stroke">${d.xt.k}</text></g>`);
+    });
+
+    // drives
+    const drawDrive = (d, P, i, ax, straight) => {
+      const c = C[d.t], pts = d.q;
+      w(`<polyline points="${pts.map(p => P(p[0], p[1]).map(f1).join(',')).join(' ')}" fill="none" stroke="${c}" stroke-width="1.7" stroke-linejoin="round" pointer-events="none"/>`);
+      pts.slice(0, -1).forEach((p, j) => {
+        const [x, yy] = P(p[0], p[1]), k = p[2], id = `data-i="${i}" data-j="${j}"`;
+        if (k === 'f') w(`<circle class="dot" ${id} cx="${f1(x)}" cy="${f1(yy)}" r="3.8" fill="${c}"/>`);
+        else if (k === 'p' || k === 'e') w(`<circle class="dot" ${id} cx="${f1(x)}" cy="${f1(yy)}" r="3.4" fill="#fff" stroke="${c}" stroke-width="1.5"/>`);
+        else {
+          const [ux, uy, tx, ty] = ax(p[0], p[1]), s = k === 'd' ? 1 : -1;      // out for the defense, in for the offense
+          const apx = x + s * ux * 5.5, apy = yy + s * uy * 5.5, bx = x - s * ux * 3.5, by = yy - s * uy * 3.5;
+          w(`<polygon class="dot" ${id} points="${f1(apx)},${f1(apy)} ${f1(bx + tx * 4.5)},${f1(by + ty * 4.5)} ${f1(bx - tx * 4.5)},${f1(by - ty * 4.5)}" fill="${FLAG}" stroke="#8A6A00" stroke-width="0.7" stroke-linejoin="round"/>`);
+        }
+      });
+      const end = pts[pts.length - 1], [ex, ey] = P(end[0], end[1]);
+      if (d.r === 'Field goal') w(`<rect x="${f1(ex - 4)}" y="${f1(ey - 4)}" width="8" height="8" fill="${c}" transform="rotate(45 ${f1(ex)} ${f1(ey)})" pointer-events="none"/>`);
+      else if (d.pr && Math.abs(d.pr.fa - d.pr.fl) > 0.005) {
+        // Only the runback is drawn, in the returning team's color. The punt's flight gets no
+        // line: a solid one read as the drive carrying on past the snap.
+        const oc = C[opp(d.t)], [lx, ly] = P(end[0], d.pr.fl), [rx, ry] = P(end[0], d.pr.fa);
+        w(`<g class="ret" data-i="${i}"><line x1="${f1(lx)}" y1="${f1(ly)}" x2="${f1(rx)}" y2="${f1(ry)}" stroke="transparent" stroke-width="12"/><circle cx="${f1(lx)}" cy="${f1(ly)}" r="2" fill="none" stroke="${oc}" stroke-width="1.1"/><line x1="${f1(lx)}" y1="${f1(ly)}" x2="${f1(rx)}" y2="${f1(ry)}" stroke="${oc}" stroke-width="1.6" stroke-dasharray="4 3"/></g>`);
+      }
+      else if (d.tov) {
+        const oc = C[opp(d.t)];
+        w(`<g class="tov" data-i="${i}"><circle cx="${f1(ex)}" cy="${f1(ey)}" r="9" fill="transparent"/><g stroke="${c}" stroke-width="2.4" stroke-linecap="round" pointer-events="none"><line x1="${f1(ex - 5.5)}" y1="${f1(ey - 5.5)}" x2="${f1(ex + 5.5)}" y2="${f1(ey + 5.5)}"/><line x1="${f1(ex - 5.5)}" y1="${f1(ey + 5.5)}" x2="${f1(ex + 5.5)}" y2="${f1(ey - 5.5)}"/></g></g>`);
+        if (d.tov.td) {                                          // defensive score: dashed return toward the center, no icon
+          const [rx, ry] = P(end[0], 0.02);
+          w(`<line x1="${f1(ex)}" y1="${f1(ey)}" x2="${f1(rx)}" y2="${f1(ry)}" stroke="${oc}" stroke-width="2" stroke-dasharray="5 4"/>`);
+        } else {
+          // Only the runback itself, exactly as far as it went. (It used to carry on to the
+          // new offense's own starting spot, which made every return look far longer than it was.)
+          const [rx, ry] = P(end[0], d.tov.fa);
+          if (d.tov.fa < d.tov.fi) w(`<line x1="${f1(ex)}" y1="${f1(ey)}" x2="${f1(rx)}" y2="${f1(ry)}" stroke="${oc}" stroke-width="1.8" stroke-dasharray="5 4"/>`);
+        }
+      }
+    };
+    const Pw = (e, frac) => polar(deg(e), radiusFor(frac));
+    const AXw = (e) => { const a = (deg(e) - 90) * Math.PI / 180; return [Math.cos(a), Math.sin(a), -Math.sin(a), Math.cos(a)]; };
+    reg.forEach(d => drawDrive(d, Pw, game.drives.indexOf(d), AXw));
+    w(`<circle cx="${CX}" cy="${CY}" r="2.2" fill="${INK}"/>`);
+    w('</svg>');
+    const wheelSvg = o.join('\n');
+
+    // ---------- below the fold: the score chart, then overtime ----------
+    o.length = 0;
+    const X0 = CX - R_OUT, X1 = CX + R_OUT, FW = X1 - X0, SC_H = 178;
+    const scTop = 52, scBottom = scTop + SC_H;
+    const otTop = game.ot ? scBottom + 96 : 0, OT_H = SC_H + 20, otB = otTop + OT_H;
+    const lowerH = (game.ot ? otB + 54 : scBottom + 40);
+    w(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${lowerH}">`);
+    w(`<rect x="0" y="0" width="${W}" height="${lowerH}" fill="${PAPER}"/>`);
+
+    const total = 3600, xs = e => X0 + Math.min(e, 3600) / 3600 * FW;
+    const regA = regScore(game, 0), regH = regScore(game, 1);          // score as regulation ended
+    const maxS = Math.max(21, Math.ceil(Math.max(regH, regA) / 7) * 7), ys = s => scBottom - s / maxS * (SC_H - 16);
+    w(`<text x="${X0}" y="${scTop - 14}" font-family="${FONT_D}" font-size="21" font-weight="600" letter-spacing="1.6" fill="${MUTE}">SCORE${game.ot ? ' THROUGH REGULATION' : ''}</text>`);
+    for (let s = 7; s <= maxS; s += 7) { w(`<line x1="${X0}" y1="${f1(ys(s))}" x2="${f1(xs(total))}" y2="${f1(ys(s))}" stroke="${GRID}" stroke-width="1"/>`); w(`<text x="${X0 - 12}" y="${f1(ys(s) + 5)}" text-anchor="end" font-family="${FONT_M}" font-size="14" fill="${MUTE}">${s}</text>`); }
+    w(`<line x1="${X0}" y1="${scBottom}" x2="${f1(xs(total))}" y2="${scBottom}" stroke="${INK}" stroke-width="1.6"/>`);
+    for (const e of [900, 2700]) w(`<line x1="${f1(xs(e))}" y1="${scTop}" x2="${f1(xs(e))}" y2="${scBottom}" stroke="${INK}" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.7"/>`);
+    w(`<line x1="${CX}" y1="0" x2="${CX}" y2="${scBottom}" stroke="${INK}" stroke-width="1.3"/>`);
+    [[away, 0], [home, 1]].forEach(([t, k]) => {
+      let cur2 = 0, path = `M${f1(xs(0))},${f1(ys(0))}`;
+      for (const d of game.drives) { if (d.a0 >= 3600) break; if (d.sc[k] !== cur2) { path += ` H${f1(xs(d.a1))} V${f1(ys(d.sc[k]))}`; cur2 = d.sc[k]; } }
+      path += ` H${f1(xs(total))}`;
+      w(`<path d="${path}" fill="none" stroke="${C[t]}" stroke-width="2.4" stroke-linejoin="round"/>`);
+      const fin = k ? regH : regA, other = k ? regA : regH;
+      const close = Math.abs(ys(fin) - ys(other)) < 28, dy = close ? (fin > other ? -15 : fin < other ? 17 : (k ? 17 : -15)) : 0;
+      w(`<text x="${f1(xs(total) + 10)}" y="${f1(ys(fin) + 4 + dy)}" font-family="${FONT_D}" font-size="22" font-weight="600" letter-spacing="0.4" fill="${C[t]}">${t} ${fin}</text>`);
+    });
+
+    if (game.ot) {
+      const T = otTop, B = otB;
+      const yt = e => T + (e - 3600) / otLen * OT_H;
+      const xf = (t, frac) => t === home ? X0 + frac * FW : X1 - frac * FW;   // home attacks the right end zone
+      w(`<text x="${CX}" y="${T - 24}" text-anchor="middle" font-family="${FONT_D}" font-size="21" font-weight="600" letter-spacing="1.6" fill="${MUTE}">OVERTIME</text>`);
+      w(`<rect x="${X0}" y="${T}" width="${FW}" height="${OT_H}" fill="#fff" stroke="#CBC8C1"/>`);
+      ot.forEach(d => w(`<rect class="wedge" data-ot="1" data-i="${game.drives.indexOf(d)}" x="${X0}" y="${f1(yt(d.a0))}" width="${FW}" height="${f1(Math.max(1, yt(d.a1) - yt(d.a0)))}" fill="${C[d.t]}" fill-opacity="0.11" stroke="${PAPER}" stroke-width="1"/>`));
+      for (let yd = 10; yd < 100; yd += 10) {                    // yard lines labeled on top; the 50 shares the halftime line
+        const x = X0 + yd / 100 * FW;
+        w(`<line x1="${f1(x)}" y1="${T}" x2="${f1(x)}" y2="${B}" stroke="${yd === 50 ? INK : GRID}" stroke-width="${yd === 50 ? 1.7 : 1.1}" pointer-events="none"/>`);
+        w(`<text x="${f1(x)}" y="${T - 9}" text-anchor="middle" font-family="${FONT_M}" font-size="14" fill="${MUTE}">${yd > 50 ? 100 - yd : yd}</text>`);
+      }
+      for (let sec = 0; sec <= otLen; sec += 60) {
+        const yy = yt(3600 + sec), maj = sec % 300 === 0;
+        w(`<line x1="${X0 - (maj ? 16 : 10)}" y1="${f1(yy)}" x2="${X0 - 4}" y2="${f1(yy)}" stroke="${maj ? INK : RULE}" stroke-width="${maj ? 2 : 1.2}"/>`);
+        if (maj) w(`<text x="${X0 - 24}" y="${f1(yy + 5)}" text-anchor="end" font-family="${FONT_M}" font-size="14" fill="${MUTE}">${mmss(otLen - sec)}</text>`);
+      }
+      w(`<text x="${X0}" y="${T - 24}" font-family="${FONT_D}" font-size="21" font-weight="600" letter-spacing="0.5" fill="${C[away]}">◀ ${away}</text>`);
+      w(`<text x="${X1}" y="${T - 24}" text-anchor="end" font-family="${FONT_D}" font-size="21" font-weight="600" letter-spacing="0.5" fill="${C[home]}">${home} ▶</text>`);
+      ot.forEach(d => {
+        if (!d.sb) return;
+        const right = d.sb === home, x = right ? X1 + 8 : X0 - 8, total2 = d.sb === away ? d.sc[0] : d.sc[1];
+        w(`<line x1="${x}" y1="${f1(yt(d.a0))}" x2="${x}" y2="${f1(yt(d.a1))}" stroke="${C[d.sb]}" stroke-width="8"/>`);
+        w(`<text x="${right ? X1 + 20 : X0 - 20}" y="${f1((yt(d.a0) + yt(d.a1)) / 2)}" text-anchor="${right ? 'start' : 'end'}" dominant-baseline="middle" font-family="${FONT_D}" font-size="21" font-weight="600" letter-spacing="0.4" fill="${C[d.sb]}">${esc(d.w)} ${total2}</text>`);
+      });
+      ot.forEach(d => drawDrive(d, (e, fr) => [xf(d.t, fr), yt(e)], game.drives.indexOf(d), () => [d.t === home ? 1 : -1, 0, 0, 1], true));
+    }
+    w('</svg>');
+
+    fit.innerHTML = wheelSvg + o.join('\n');
+    fitRatio = W / wheelH;
+    applyZoom();
+    const wkName = game.st === 'REG' ? 'Week ' + game.wk : ({19:'Wild card',20:'Divisional',21:'Conference',22:'Super Bowl'}[game.wk] || 'Playoffs');
+    const row = (t, sc) => { const p = game.top && game.top[t] ? game.top[t] : { s: 0, n: 0 };
+      return `<tr style="color:${C[t]}"><td class="tm">${t}</td><td class="sc">${sc}</td><td>${mmss(p.s)}</td><td>${p.n} drives</td></tr>`; };
+    document.getElementById('hud').innerHTML =
+      `<div class="meta"><div class="wk">${esc(wkName)} · ${fmtDate(game.date).toUpperCase()}</div>` +
+      (game.stad ? `<div class="stad">${esc(game.stad)}</div>` : '') + '</div>' +
+      `<table>${row(away, game.as_)}${row(home, game.hs)}</table>`;
+
+    current = { game, C };
+    wire();
+  }
+
+  // ---------- interaction ----------
+  let pinned = false;
+  function showTip(html, x, y, pin) {
+    tip.innerHTML = html; tip.classList.add('on'); tip.style.pointerEvents = pin ? 'auto' : 'none';
+    const pad = 14, tw = tip.offsetWidth, th = tip.offsetHeight;
+    let left = x + pad, top = y + pad;
+    if (left + tw > window.innerWidth - 8) left = x - tw - pad;
+    if (top + th > window.innerHeight - 8) top = y - th - pad;
+    tip.style.left = left + 'px'; tip.style.top = top + 'px';
+  }
+  const opp2 = (g, t) => t === g.home ? g.away : g.home;
+  function wire() {
+    const { game, C } = current;
+    fit.querySelectorAll('.wedge').forEach(el => {
+      const d = game.drives[+el.dataset.i], n = +el.dataset.i + 1;
+      const html = `<b style="color:${onDark(C[d.t])}">${TEAMS[d.t] ? TEAMS[d.t].nick.toUpperCase() : d.t}</b> <span class="k">DRIVE ${n}</span><br>${d.n} play${d.n === 1 ? '' : 's'} · ${mmss(d.a1 - d.a0)} · ${d.y} yds<br><span class="k">${esc(d.r).toUpperCase()}</span>`;
+      el.addEventListener('mousemove', ev => { if (!pinned) showTip(html, ev.clientX, ev.clientY); });
+      el.addEventListener('click', ev => { ev.stopPropagation(); pinned = true; showTip(html, ev.clientX, ev.clientY, true); });
+      el.addEventListener('mouseenter', () => { el.setAttribute('fill-opacity', '0.24'); el.setAttribute('stroke', INK); });
+      el.addEventListener('mouseleave', () => { el.setAttribute('fill-opacity', el.dataset.ot ? '0.11' : '0.13'); el.setAttribute('stroke', PAPER); if (!pinned) tip.classList.remove('on'); });
+    });
+    fit.querySelectorAll('.kick').forEach(el => {
+      const d = game.drives[+el.dataset.i];
+      const html = `<b style="color:${onDark(C[d.t])}">${d.t}</b> <span class="k">${d.kr.on ? 'ONSIDE KICK RECOVERED' : 'RECOVERED THE KICKOFF'}</span><br>${esc(d.kr.d || '')}`;
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', ev => { ev.stopPropagation(); pinned = true; showTip(html, ev.clientX, ev.clientY, true); });
+    });
+    fit.querySelectorAll('.tov').forEach(el => {
+      const d = game.drives[+el.dataset.i], p = d.q[d.q.length - 2] || d.q[d.q.length - 1];
+      const q = p[0] < 3600 ? `Q${Math.floor(p[0] / 900) + 1} ${mmss(900 - (p[0] % 900))}` : `OT ${mmss(Math.max(0, game.otlen - ((p[0] - 3600) % game.otlen)))}`;
+      const dd = p[3] ? `${['', '1ST', '2ND', '3RD', '4TH'][p[3]]} & ${p[4]} · ` : '';
+      const html = `<b style="color:${onDark(C[d.t])}">${d.t}</b> <span class="k">${dd}${q} · ${esc(d.r).toUpperCase()}</span><br>${esc(p[5] || '')}`;
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', ev => { ev.stopPropagation(); pinned = true; showTip(html, ev.clientX, ev.clientY, true); });
+    });
+    fit.querySelectorAll('.ret').forEach(el => {
+      const d = game.drives[+el.dataset.i], t = opp2(game, d.t);
+      const html = `<b style="color:${onDark(C[t])}">${t}</b> <span class="k">PUNT RETURN</span><br>${esc((d.pr && d.pr.d) || '')}`;
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', ev => { ev.stopPropagation(); pinned = true; showTip(html, ev.clientX, ev.clientY, true); });
+    });
+    fit.querySelectorAll('.try').forEach(el => {
+      const d = game.drives[+el.dataset.i];
+      const html = `<b style="color:${d.xt.ok ? onDark(C[d.t]) : '#AEB8C4'}">${d.t}</b> <span class="k">${d.xt.k === '2PT' ? 'TWO-POINT ATTEMPT' : 'EXTRA POINT'} · ${d.xt.ok ? 'GOOD' : 'NO GOOD'}</span><br>${esc(d.xt.d || '')}`;
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', ev => { ev.stopPropagation(); pinned = true; showTip(html, ev.clientX, ev.clientY, true); });
+    });
+    fit.querySelectorAll('.dot').forEach(el => {
+      const d = game.drives[+el.dataset.i], p = d.q[+el.dataset.j];
+      const dd = p[3] ? `${['', '1ST', '2ND', '3RD', '4TH'][p[3]]} & ${p[4]} · ` : '';
+      const kind = { p: 'PLAY', f: 'FIRST DOWN', o: 'PENALTY ON THE OFFENSE', d: 'PENALTY ON THE DEFENSE', e: 'DRIVE-ENDING PLAY' }[p[2]];
+      const q = p[0] < 3600 ? `Q${Math.floor(p[0] / 900) + 1} ${mmss(900 - (p[0] % 900))}` : `OT ${mmss(Math.max(0, game.otlen - ((p[0] - 3600) % game.otlen)))}`;
+      const html = `<b style="color:${onDark(C[d.t])}">${d.t}</b> <span class="k">${dd}${q} · ${kind}</span><br>${esc(p[5] || '')}`;
+      el.addEventListener('click', ev => { ev.stopPropagation(); pinned = true; showTip(html, ev.clientX, ev.clientY, true); });
+    });
+  }
+  document.addEventListener('click', () => { pinned = false; tip.classList.remove('on'); });
+
+  // ---------- picker + hash routing ----------
+  const selSeason = document.getElementById('season'), selTeam = document.getElementById('team'), selWeek = document.getElementById('week'), selGame = document.getElementById('game');
+  const post = { 19: 'Wild card', 20: 'Divisional', 21: 'Conference', 22: 'Super Bowl' };
+  const weekName = g => g.st === 'REG' ? `Week ${g.wk}` : (post[g.wk] || `Playoffs ${g.wk}`);
+  function fmtDate(s) { const d = new Date(s + 'T12:00:00'); return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }); }
+  const opt = (v, t) => { const o = document.createElement('option'); o.value = v; o.textContent = t; return o; };
+  const seasons = [...new Set(GAMES.map(g => g.season))].sort();
+  seasons.forEach(sn => selSeason.appendChild(opt(sn, `NFL · ${sn}`)));
+  let cur = GAMES.find(g => g.id === location.hash.slice(1)) || GAMES.find(g => g.id === '2025_17_CHI_SF') || GAMES[0];
+  selSeason.value = cur.season;
+  function rebuildTeams() {
+    const pool = GAMES.filter(g => g.season === selSeason.value);
+    const keep = selTeam.value;
+    selTeam.innerHTML = ''; selTeam.appendChild(opt('', 'All teams'));
+    [...new Set(pool.flatMap(g => [g.home, g.away]))].sort().forEach(t => selTeam.appendChild(opt(t, TEAMS[t] ? TEAMS[t].name : t)));
+    if ([...selTeam.options].some(x => x.value === keep)) selTeam.value = keep;
+  }
+  function rebuild() {
+    const pool0 = GAMES.filter(g => g.season === selSeason.value);
+    const team = selTeam.value;
+    const pool = pool0.filter(g => !team || g.home === team || g.away === team);
+    const weeks = [...new Map(pool.map(g => [weekName(g), g])).keys()];
+    selWeek.innerHTML = ''; selWeek.appendChild(opt('', 'All weeks')); weeks.forEach(wn => selWeek.appendChild(opt(wn, wn)));
+    if (weeks.includes(selWeek.dataset.want)) selWeek.value = selWeek.dataset.want;
+    const wk = selWeek.value;
+    const list = pool.filter(g => !wk || weekName(g) === wk);
+    selGame.innerHTML = '';
+    let grp = null, last = null;
+    list.forEach(g => {
+      const wn = weekName(g);
+      if (wn !== last) { grp = document.createElement('optgroup'); grp.label = wn; selGame.appendChild(grp); last = wn; }
+      grp.appendChild(opt(g.id, `${g.away} ${g.as_} at ${g.home} ${g.hs}${g.ot ? ' (OT)' : ''} · ${fmtDate(g.date)}`));
+    });
+    if (!list.includes(cur)) cur = list[0] || cur;
+    selGame.value = cur.id;
+    show(cur);
+  }
+  let showToken = 0;
+  async function show(g) {
+    cur = g;
+    history.replaceState(null, '', '#' + g.id);
+    document.title = `${g.away} at ${g.home} · Drive Wheel`;
+    const token = ++showToken;                                  // guards against an earlier fetch landing after a later click
+    const spinner = setTimeout(() => { if (token === showToken) fit.innerHTML = '<div class="loading">Loading game…</div>'; }, 150);
+    const full = await getFull(g.id);
+    clearTimeout(spinner);
+    if (token !== showToken) return;                             // a newer game was picked while this one was still loading
+    render(full);
+  }
+  selSeason.addEventListener('change', () => { selWeek.dataset.want = ''; rebuildTeams(); rebuild(); });
+  selTeam.addEventListener('change', () => { selWeek.dataset.want = ''; rebuild(); });
+  selWeek.addEventListener('change', () => { selWeek.dataset.want = selWeek.value; rebuild(); });
+  selGame.addEventListener('change', () => show(GAMES.find(g => g.id === selGame.value)));
+  const stepGame = dir => { const opts = Array.from(selGame.options); const i = opts.findIndex(x => x.value === cur.id) + dir; if (i >= 0 && i < opts.length) { selGame.value = opts[i].value; show(GAMES.find(g => g.id === opts[i].value)); } };
+  document.getElementById('zin').addEventListener('click', () => setZoom(zoom * 1.15));
+  document.getElementById('zout').addEventListener('click', () => setZoom(zoom / 1.15));
+  document.getElementById('prev').addEventListener('click', () => stepGame(-1));
+  document.getElementById('next').addEventListener('click', () => stepGame(1));
+  window.addEventListener('hashchange', () => { const g = GAMES.find(x => x.id === location.hash.slice(1)); if (g && g !== cur) { selSeason.value = g.season; rebuildTeams(); selTeam.value = ''; selWeek.dataset.want = ''; cur = g; rebuild(); } });
+
+  // ---------- share ----------
+  const say = m => { toast.textContent = m; toast.classList.add('on'); setTimeout(() => toast.classList.remove('on'), 1800); };
+  const shareURL = () => location.protocol === 'file:' ? location.href : location.origin + location.pathname + '#' + cur.id;
+  const shareText = () => `${cur.away} ${cur.as_} at ${cur.home} ${cur.hs}${cur.ot ? ' (OT)' : ''} — one game, one circle.`;
+  document.getElementById('shLink').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(shareURL()); say('Link copied'); } catch (e) { say(shareURL()); }
+  });
+  document.getElementById('shX').addEventListener('click', () => window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText()) + '&url=' + encodeURIComponent(shareURL()), '_blank'));
+
+  // ---------- mobile chrome ----------
+  // The picker is collapsed by default on a phone: it costs a lot of screen and the block
+  // above the wheel already names the game. The toggle carries the matchup so it reads as
+  // the game picker rather than a generic menu.
+  const menu = document.getElementById('menu'), controls = document.getElementById('controls'),
+        menuLabel = document.getElementById('menuLabel'), share = document.getElementById('share'),
+        card = document.querySelector('.card'), mastIn = document.querySelector('.mast-in');
+  menu.addEventListener('click', () => {
+    const open = controls.classList.toggle('open');
+    menu.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  const narrow = window.matchMedia('(max-width: 820px)');
+  function layoutChrome() {
+    if (narrow.matches) {
+      if (share.parentElement !== card.parentElement) card.parentElement.appendChild(share);
+    } else {
+      if (share.parentElement !== mastIn) mastIn.appendChild(share);
+      controls.classList.remove('open');
+      menu.setAttribute('aria-expanded', 'false');
+    }
+  }
+  narrow.addEventListener('change', layoutChrome);
+  layoutChrome();
+  window.setMenuLabel = g => { menuLabel.textContent = `${g.away} at ${g.home}`; };
+  window.setMenuLabel(cur);
+
+  rebuildTeams(); rebuild();
+})();
+</script>
 </body></html>
