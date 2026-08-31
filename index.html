@@ -3,9 +3,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Drive Wheel · How to read it</title>
 <meta name="description" content="One circle, sixty minutes. Angle is the clock, distance is the field. How to read a Drive Wheel.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Drive Wheel · How to read it">
+<meta property="og:description" content="One circle, sixty minutes. How to read a Drive Wheel.">
+<meta property="og:image" content="https://drivewheel.football/og-image.png">
+<meta property="og:url" content="https://drivewheel.football/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Drive Wheel · How to read it">
+<meta name="twitter:description" content="One circle, sixty minutes. How to read a Drive Wheel.">
+<meta name="twitter:image" content="https://drivewheel.football/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#080D0B; --turf:#0F1815; --turf-2:#16221E; --line:#2E4038; --line-2:#4A6156;
@@ -20,7 +29,7 @@ a{color:inherit}
 .wrap{max-width:1240px;margin:0 auto;padding:0 24px}
 .mast{position:sticky;top:0;z-index:60;background:rgba(8,13,11,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .mast-in{max-width:1240px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:16px}
-.logo-txt{font-weight:600;font-size:1.35rem;letter-spacing:.06em;text-transform:uppercase;line-height:1}
+.logo-txt{font-family:'Big Shoulders Display',Impact,'Arial Narrow',sans-serif;font-weight:700;font-size:1.72rem;letter-spacing:.05em;text-transform:uppercase;line-height:1}
 .cta{margin-left:auto;font-size:.86rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:10px 16px;border:1px solid var(--line-2);border-radius:2px;text-decoration:none;white-space:nowrap}
 .cta:hover{border-color:var(--chalk-dim);background:var(--turf-2)}
 h1{font-size:clamp(2.1rem,4.6vw,3.2rem);line-height:1.02;font-weight:700;letter-spacing:-.02em;margin:36px 0 14px}
@@ -443,9 +452,9 @@ section{margin:0 0 64px}
         <ul class="keys">
           <li><svg width="26" height="14"><circle cx="13" cy="7" r="4.4" fill="#C3CEC8"/></svg><span><b>A first down.</b> Solid dots moved the chains.</span></li>
           <li><svg width="26" height="14"><circle cx="13" cy="7" r="4" fill="none" stroke="#C3CEC8" stroke-width="1.8"/></svg><span><b>Any other snap.</b> Hollow dots did not.</span></li>
-          <li><svg width="26" height="14"><polygon points="18,7 9,12 9,2" fill="#F5C518" stroke="#8A6A00" stroke-width="0.8"/></svg><span><b>A penalty.</b> The triangle points at the team the flag was on.</span></li>
+          <li><svg width="26" height="14"><polygon points="18,7 9,12 9,2" fill="#F5C518" stroke="#8A6A00" stroke-width="0.8"/></svg><span><b>A penalty.</b> The triangle points at the team the flag was on — including a kickoff put out of bounds, which hands the ball over near midfield.</span></li>
           <li><svg width="26" height="14"><g stroke="#C3CEC8" stroke-width="2.4" stroke-linecap="round"><line x1="8" y1="2" x2="18" y2="12"/><line x1="8" y1="12" x2="18" y2="2"/></g></svg><span><b>A turnover,</b> at the spot it happened.</span></li>
-          <li><svg width="26" height="14"><line x1="1" y1="7" x2="25" y2="7" stroke="#C3CEC8" stroke-width="2" stroke-dasharray="4 3"/></svg><span><b>A return</b> by the other team, as far as it went.</span></li>
+          <li><svg width="26" height="14"><line x1="1" y1="7" x2="25" y2="7" stroke="#C3CEC8" stroke-width="2" stroke-dasharray="4 3"/></svg><span><b>A return,</b> dashed, in the returning team's colour — kickoffs, punts and turnovers alike.</span></li>
           <li><svg width="26" height="14"><rect x="9" y="3" width="8" height="8" fill="#C3CEC8" transform="rotate(45 13 7)"/></svg><span><b>A field goal attempt,</b> at the spot of the kick.</span></li>
           <li><svg width="26" height="14"><path d="M1,12 A16,16 0 0,1 25,12" fill="none" stroke="#C3CEC8" stroke-width="5.5"/></svg><span><b>A scoring drive,</b> in the scoring team's color.</span></li>
           <li><svg width="26" height="14"><path d="M1,12 A16,16 0 0,1 25,12" fill="none" stroke="#7C8A83" stroke-width="2.8"/></svg><span><b>A drive that didn't score.</b></span></li>
